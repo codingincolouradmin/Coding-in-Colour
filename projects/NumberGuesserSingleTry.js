@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')();
 
 // Random number between 1 and 100
-const randomNumber = Math.floor(Math.random() * 100) + 1;
+const randomNumber = Math.floor(Math.random() * 100);
 
 console.log('Guess the number between 1 and 100!');
 
