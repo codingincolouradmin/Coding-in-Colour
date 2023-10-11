@@ -2,6 +2,7 @@
 
 ## Outline Bookmarks:
 
+- [What's in this?](#Inside)
 - [Class Recordings](https://www.youtube.com/playlist?list=PLpYu7Wkyi5ruXL-HBsw61NmqZy2yLEqXc)
 - [Zoom Class Link](https://us06web.zoom.us/j/87077142039?pwd=Iu236SdMWo4K9Mdu6MMivowmgP7pkk.1)
 - [Schedule](#schedule)
@@ -9,6 +10,13 @@
 - [Tools & Technologies](#tools--technologies)
 - [Social Links](#social-links)
 - [FAQ](#frequently-asked-questions-faq)
+
+## Inside
+
+This is meant to be a repository containing all relevant class code, including:
+- **Lectures:** content we cover in class, in a runnable format, including worked examples (for e.g., rock paper scissors)
+- **Labs:** content we assign in class, this is marked for completion only. We will include both starter files here, as well as solutions (past deadline)
+- **Assignments:** content we assign in class, this is marked for correctness. We will include both starter files here, as well as solutions (past deadline)
 
 ## Schedule
 
