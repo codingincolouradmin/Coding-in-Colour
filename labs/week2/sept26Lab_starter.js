@@ -1,4 +1,5 @@
-// Lab 1.1: For each of these, please write your code on the successive line (3, 5, 7, 9, 10)
+// Lab 1.1: 
+// For each of these, please write your code on the successive line we have provided
 // Declare a variable for your first name
 
 // Declare a variable for your last name
