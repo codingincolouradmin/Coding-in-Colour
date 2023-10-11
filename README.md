@@ -41,7 +41,7 @@ Lab time is for working on your assignments and group projects. Your teams will 
 - [Node.js Download](https://nodejs.org/en)
 - [Git Download](https://www.example.com/git-download)
 
-We **highly** recommend using [ChatGPT](https://chat.openai.com) as a learning tool, especially for programming. Here's a [reference video](https://www.youtube.com/watch?v=TPopzUreo4I&list=PLpYu7Wkyi5ruXL-HBsw61NmqZy2yLEqXc&index=31) showcasing great examples of its usage. It's like having a friendly and helpful tutor available 24/7. Whether you're just starting out or already know some programming, ChatGPT can assist you. It knows a lot about different programming languages and can explain things in simple terms. If you're stuck on a coding problem, ChatGPT can provide quick explanations and help you think through it. It's like having a programming buddy to learn from. Plus, it can help educators create easy programming exercises and lessons. As programming keeps changing, ChatGPT keeps learning and getting better, making it a great companion for anyone learning to code.
+We **highly** recommend using [ChatGPT](https://chat.openai.com) as a learning tool, especially for programming. Here's a [reference video](https://www.youtube.com/watch?v=TPopzUreo4I&list=PLpYu7Wkyi5ruXL-HBsw61NmqZy2yLEqXc&index=31) showcasing great examples of its usage. It's like having a friendly and helpful tutor available 24/7. Whether you're just starting out or already know some programming, ChatGPT can assist you. It knows a lot about different programming languages and can explain things in simple terms. If you're stuck on a coding problem, ChatGPT can provide quick explanations and help you think through it. It's like having a programming buddy to learn from.
 
 ## Social Links:
 
