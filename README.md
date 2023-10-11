@@ -1,6 +1,6 @@
 # Course Name
 
-## Document Bookmarks:
+## Outline Bookmarks:
 
 - [Class Recordings](https://www.youtube.com/playlist?list=PLpYu7Wkyi5ruXL-HBsw61NmqZy2yLEqXc)
 - [Zoom Class Link](https://us06web.zoom.us/j/87077142039?pwd=Iu236SdMWo4K9Mdu6MMivowmgP7pkk.1)
@@ -14,15 +14,39 @@
 
 Your attendance and participation are highly correlated with your success in this program. If you are juggling other responsibilities and require scheduling flexibility, please let us know as soon as possible so that we can provide accommodations. 
 
-**Monday - Friday**
-
-- 8am - 10am: Class
-- 10am - 12pm: Lab
-- 12pm - 1pm*: Lunch 
-- 1pm - 3pm: Class
-- 3pm - 5pm: Lab
-
-\* Allowing flexibility for Muslim prayer time on Friday (65% of class)
+<table>
+  <tr>
+    <th>Day</th>
+    <th>Schedule</th>
+    <th>Day</th>
+    <th>Schedule</th>
+  </tr>
+  <tr>
+    <td rowspan="6"><strong>Monday-Thursday</strong></td>
+    <td>8am - 10am: Class</td>
+    <td rowspan="6"><strong>Friday</strong></td>
+    <td>8am - 10am: Class</td>
+  </tr>
+  <tr>
+    <td>10am - 12pm: Lab</td>
+    <td>10am - 12pm: Lab</td>
+  </tr>
+  <tr>
+    <td>12pm - 1pm: Lunch</td>
+    <td>12pm - 3pm: Lunch</td>
+  </tr>
+  <tr>
+    <td>1pm - 3pm: Class</td>
+    <td>3pm - 5pm: Student Success Workshop</td>
+  </tr>
+  <tr>
+    <td>3pm - 5pm: Lab</td>
+    <td>5pm - 7pm: Office Hours</td>
+  </tr>
+  <tr>
+    <td>7pm - 8pm: Office Hours</td>
+  </tr>
+</table>
 
 Class time is for learning new material and live coding demos by your instructors. Questions related to the material covered in class (or previous classes) are highly encouraged. Most of the material will build off of prior material, and it is very important to have the foundations to understand future concepts. If you miss a lecture, please make sure to watch the recording as soon as possible so that you are not missing context in the next class.
 
