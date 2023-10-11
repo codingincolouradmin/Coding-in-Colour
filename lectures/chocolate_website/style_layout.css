@@ -1,0 +1,117 @@
+/* Reset and universal styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f1e0d6;
+    color: #4b3828;
+    padding: 20px;
+    font-size: 18px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #70483c;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+li {
+    list-style-type: none;
+}
+
+a:hover {
+    background-color: #e7d1c1;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e7d1c1;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin-right: 15px;
+}
+
+/* Sections */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f6f1;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #e7d1c1;
+    text-align: center;
+}
+
+th {
+    background-color: #e7d1c1;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 800px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    section {
+        padding: 10px;
+    }
+}
