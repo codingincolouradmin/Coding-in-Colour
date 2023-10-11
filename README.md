@@ -8,6 +8,7 @@
 - [Curriculum Overview](#curriculum-overview)
 - [Tools & Technologies](#tools--technologies)
 - [Social Links](#social-links)
+- [FAQ](#frequently-asked-questions-faq)
 
 ## Schedule
 
@@ -47,3 +48,9 @@ We **highly** recommend using [ChatGPT](https://chat.openai.com) as a learning t
 
 - [WhatsApp Group](https://chat.whatsapp.com/EJxnSeETF0w2bjOBVrHjMe)
 - [Slack Group](https://join.slack.com/t/codingincolour/shared_invite/zt-23bbxq3wk-ovN5PedJ1imngqN1OSceMw)
+
+## Frequently Asked Questions (FAQ)
+
+**Q1: Example?**
+
+A1: Example!
