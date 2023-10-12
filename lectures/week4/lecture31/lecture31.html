@@ -12,40 +12,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            span {
-                color: purple;
-                font-weight: 609;
-                font-size: 24px;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                background-color: grey;
-            }
-
-            ul {
-                margin-top: 8px;
-                margin-bottom: 8px;
-                padding: 8px;
-                border: 2px solid black;
-                border-radius: 10px;
-                list-style-type: none;
-                /* box-shadow: 2px 2px 2px 2px grey; */
-            }
-
-            li {
-                text-align: center;
-            }
-
-        </style>
+        <link rel="stylesheet" type="text/css" href="./styles/myStyles.css"/>
     </head>
 
     <body>
-        <div> This is a div </div>
+        <div class="myClass"> This is a div </div>
         <span> This is a span </span>
         <ul>
-            <li> Item 1 </li>
-            <li> Item 2 </li>
-            <li> Item 3 </li>
-            <li> Item 4 </li>
+            <li id="firstChild"> Item 1 </li>
+            <li id="secondChild"> Item 2 </li>
+            <li id="thirdChild"> Item 3 </li>
+            <li class="myClass"> Item 4 </li>
+            <span> A new span </span>
         </ul>
     </body>
+
+    <footer>
+        <button class="halloween-button" id="lightning-button">Click Me</button>
+    </footer>
 </html>
