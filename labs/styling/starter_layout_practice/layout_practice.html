@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport meta tag -->
+    <title>Advanced CSS Practice</title>
+    <link rel="stylesheet" type="text/css" href="starter_layout_practice.css">
+</head>
+
+<body>
+
+    <!-- BOX MODEL -->
+    <section id="box-model">
+        <h2>Box Model</h2>
+        <!-- Apply 200px width, 100px height, 10px padding, 5px border, and 10px margin to the box class. -->
+        <div class="box">
+            Content Box
+        </div>
+        <div class="box border-box">
+            <!-- For the border-box class, change box-sizing to border-box. What difference do you see and why? -->
+            Border Box
+        </div>
+    </section>
+
+    <!-- DISPLAY PROPERTY -->
+    <section id="display">
+        <h2>Display Property</h2>
+        <!-- Apply the appropriate display property to each class. What differences do you observe?  -->
+        <div class="inline">Inline Element 1</div>
+        <div class="inline">Inline Element 2</div>
+        <div class="inline">Inline Element 3</div>
+        <div class="block">Block Element 1</div>
+        <div class="block">Block Element 2</div>
+    </section>
+
+    <!-- POSITION & Z-INDEX -->
+    <section id="position">
+        <h2>Position & Z-Index</h2>
+        <!-- Set the 'relative' box to have a position 20px below its original position and 100px away from the left  -->
+        <div class="relative-box">
+            Relative Position
+            <!-- The 'absolute' box is inside of the relative div. What happens when you set its position? Set it to be in the bottom right corner, 20px from the bottom and 10px from the right  -->
+            <div class="absolute-box">Absolute Position</div>
+        </div>
+        <!-- The 'fixed' box needs to go in the bottom right of the page at all times, regardless of where the user is scrolling. Set the position so that it is always 20px from the right and 20px from the bottom  -->
+        <div class="fixed-box">Fixed Position</div>
+    </section>
+
+    <!-- FLEXBOX -->
+    <section id="flexbox">
+        <h2>Flexbox</h2>
+        <div class="flex-container">
+            <!-- Set this container to be a flexbox. Make the items centered on the page and an equal space from one another and the 
+            edges of the page. Each item should take up a width of 25% of the flexbox. The text inside each box should be centered too -->
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+        </div>
+    </section>
+
+    <!-- GRID -->
+    <section id="grid">
+        <h2>CSS Grid</h2>
+        <div class="grid-container">
+            <!-- Set this container to be a grid. The grid should have 3 columns and 2 rows. Each column should be 1/3rd of the container width and there should be a 10px gap between items
+            The text inside the grid items should be centered too. -->
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+        </div>
+    </section>
+
+    <!-- RESPONSIVE DESIGN -->
+    <section id="responsive">
+        <h2>Responsive Web Design</h2>
+        <!-- In this section you will add responsive elements to your page. When the browser size has a width smaller than 768px (to simulate mobile devices),
+        the flexbox must change so that the items are stacked on top of one another instead of size by side. Make sure to add a 10px margin to the items so they stay separate!
+        The grid must also change to be a 2-column grid instead of 3. -->
+        <p>Resize the browser window or use devtools to see breakpoints in action.</p>
+    </section>
+
+    <footer>
+        <p>Practice makes perfect! - &copy; 2023</p>
+    </footer>
+
+</body>
+
+</html>
