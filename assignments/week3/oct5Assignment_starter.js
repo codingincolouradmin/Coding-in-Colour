@@ -1,7 +1,7 @@
 /**
  * Oct 5th Assignment:
- *      Part 1: Refactoring Rock Paper Scissors Game
- *      Part 2: Banking System
+ *      Part 1 (Morning): Refactoring Rock Paper Scissors Game
+ *      Part 2 (Afternoon): Banking System
  */
 
 /**
