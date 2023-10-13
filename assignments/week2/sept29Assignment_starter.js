@@ -1,5 +1,5 @@
 /*
-Assignment: Creating a Blackjack Game
+Sept 29th Assignment: Creating a Blackjack Game
 
 Description:
 Today, you will be creating your own game, a simplified version of Blackjack. The game rules are as follows:
