@@ -3,8 +3,9 @@ const prompt = require('prompt-sync')();
 
 /**
  * October 4th Labs
- *      Lab 1 (Morning)
- *      Lab 2 (Afternoon)
+ *      Lab 1 (Morning)         Submit: Your JavaScript file(s)
+ *      Lab 2 (Afternoon)       Submit: Your JavaScript file(s)
+ * 
  */
 
 /**

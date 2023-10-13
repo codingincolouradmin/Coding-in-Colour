@@ -1,5 +1,11 @@
 // Import setup
-const prompt = require('prompt-sync')(); 
+const prompt = require('prompt-sync')();
+
+/**
+ * September 28th Lab:
+ *      Part 1 (Morning):       Submit: Your JavaScript file(s)          
+ *      Part 2 (Afternoon):     Submit: Your JavaScript file(s)
+ */
 
 /**
  * Lab 1.1
