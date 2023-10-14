@@ -7,7 +7,7 @@
 /**
  * Part 1: Rock Paper Scissors
  * Description:
- *      Today, we'll be revisiting functions and refactoring the rock-paper-scissors game we worked on during the past lab.
+ *      Today, we'll be revisiting functions and refactoring the rock-paper-scissors game we worked on during the past lab (See Lecture 19 in week 2).
  *      We can provide a few hints that can help you think about how you'd go about this process. 
  *      One important thing to think about is to review the existing code and look into how we can 'compartmentalize' functionality to make our code cleaner.
  * 
