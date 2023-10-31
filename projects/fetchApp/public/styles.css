@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Outfit';
+    font-display: swap;
+    font-weight: 300, 400, 600;
+    src: url('../assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+}
+
+/** Variables */
+:root {
+    /** Font-family */
+    --font-family-default: 'Outfit';
+
+    /** Font-size */
+    --font-size: 36px;
+
+    /** Font-weights */
+    --fw-thin: 300;
+    --fw-regular: 400;
+    --fw-bold: 600;
+}
+
+/** Initial setup */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    font: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/** Styling */
+html {
+    font-size: var(--font-size);
+    font-family: var(--font-family-default);
+}
