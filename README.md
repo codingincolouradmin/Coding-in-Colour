@@ -15,8 +15,7 @@
 
 This is meant to be a repository containing all relevant class code, including:
 - **Lectures:** content we cover in class, in a runnable format, including worked examples (for e.g., rock paper scissors)
-- **Labs:** content we assign in class, this is marked for completion only. We will include both starter files here, as well as solutions (past deadline)
-- **Assignments:** content we assign in class, this is marked for correctness. We will include both starter files here, as well as solutions (past deadline)
+- **Assignments:** content we assign in class weekly, this is marked for correctness. We will include both starter files here, as well as solutions (past deadline)
 
 ## Schedule
 
