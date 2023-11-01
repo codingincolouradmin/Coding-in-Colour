@@ -1,5 +1,5 @@
 const apiKey = '1af868675d9edd491f5b6845701f947c';                                                      // API key
-let city = 'Vancouer';                                                                                      // Longitude
+let city = 'Vancouver';                                                                                      // Longitude
 
 const fetchAPIData = () => {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}` // Endpoint URL
@@ -13,3 +13,4 @@ const fetchAPIData = () => {
 }
 
 fetchAPIData();
+// Weather we can expect -> weather.main (Clear, CLouds, Rain, Snow, Thunderstorm, Mist, Fog, Haze, Smoke, Drizzle, Tornado, Hurricane)
