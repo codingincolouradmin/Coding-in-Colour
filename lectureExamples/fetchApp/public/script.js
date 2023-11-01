@@ -1,5 +1,5 @@
 const apiKey = '1af868675d9edd491f5b6845701f947c';                                                      // API key
-let city = 'Vancouver';                                                                                 // City name
+let city = 'Oslo';                                                                                 // City name
 let weather = {};                                                                              
 
 const fetchAPIData = async () => {
@@ -14,7 +14,7 @@ const fetchAPIData = async () => {
 }
 
 const printWeather = async () => {
-    const weather = await fetchAPIData();
+    weather = await fetchAPIData();
     console.log(weather);
 }
 
