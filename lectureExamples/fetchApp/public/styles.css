@@ -19,10 +19,9 @@
     --fw-bold: 600;
 
     /** Primary Colours */
-    --clr-primary-apricot: #FFC9B5;
     --clr-primary-melon: #F7B1AB;
-    --clr-primary-ash-gray: #C7D3BF;
-    --clr-primary-rose: #F7DAD9;
+    --clr-primary-melon-hover: #E59189; 
+    --clr-primary-melon-active: #D17C71;
 
     /** Secondary Colours */
     --clr-secondary-sun: #F2D0A4;
