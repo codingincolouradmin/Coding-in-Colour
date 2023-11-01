@@ -21,19 +21,19 @@
     --fw-bold: 500;
 
     /** Primary Colours */
-    --clr-primary-melon: #F7B1AB;
-    --clr-primary-melon-hover: #E59189; 
-    --clr-primary-melon-active: #D17C71;
+    --clr-primary-halloween: #FEF5E6;
+    --clr-primary-halloween-hover: #FDDEB0; 
+    --clr-primary-melon-active: #573500;
+    --clr-primary-text-light: #FEF5E6;
+    --clr-primary-text-dark: #573500;
 
     /** Secondary Colours */
-    --clr-secondary-sun: #FFD400;
-    --clr-secondary-snow: #F7F7FF;
+    --clr-secondary-sun: #DD6031;
     --clr-secondary-rain: #90C2E7;
 
     /** Sizes of Stuff */
     --screen-width: 412px;
     --header-height: 100px;
-    --main-height: 717px;
     --footer-height: 100px;
 
     --button-width: 120px;
@@ -41,9 +41,6 @@
 
     --input-width: 300px;
     --input-height: 45px;
-
-    --weather-display-width: 300px;
-    --weather-display-height: 339px;
 
     --svg-dimension: 96px;
 }
