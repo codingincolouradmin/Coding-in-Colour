@@ -5,7 +5,9 @@ const fetchAPIData = async (city) => {
     try {
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`          // Endpoint URL
         const response = await fetch(apiUrl);
+        console.log('response body', response.body);
         const data = await response.json();
+        console.log('data', data);
         return data;
     } catch (error) {
         console.error('Fetch error ', error);
@@ -33,7 +35,6 @@ getButton.addEventListener('click', async (e) => {
     const weatherData = await fetchAPIData(inputValue);
     const simpleWeather = weatherData.weather[0].main;
     const description = weatherData.weather[0].description;
-    console.log('length', mainContainer.childNodes.length);
     if (mainContainer.childNodes.length > 7) {
         const weatherDiv = document.getElementsByClassName('weather-data')[0];
         weatherDiv.childNodes[0].textContent = inputValue ? inputValue: '';
