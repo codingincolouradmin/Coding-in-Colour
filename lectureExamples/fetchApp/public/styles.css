@@ -29,6 +29,21 @@
     --clr-secondary-sun: #FFD400;
     --clr-secondary-snow: #F7F7FF;
     --clr-secondary-rain: #90C2E7;
+
+    /** Sizes of Stuff */
+    --screen-width: 412px;
+    --header-height: 100px;
+    --main-height: 717px;
+    --footer-height: 100px;
+
+    --button-width: 120px;
+    --button-height: 50px;
+
+    --input-width: 300px;
+    --input-height: 45px;
+
+    --weather-display-width: 300px;
+    --weather-display-height: 339px;
 }
 
 /** Initial setup */
