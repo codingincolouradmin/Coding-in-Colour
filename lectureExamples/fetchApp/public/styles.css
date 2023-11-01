@@ -83,4 +83,34 @@ body {
     background-color: var(--clr-primary-halloween);
     border: 2px solid var(--clr-primary-text-dark);
     border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
 }
+
+.header {
+    flex: 0 0 100px;
+    border-bottom: 1px solid var(--clr-primary-text-dark);
+}
+
+.title {
+    padding: 10px 0 10px 15px;
+    color: var(--clr-primary-text-dark);
+}
+
+.title h1 {
+    font-size: 2rem;
+}
+
+.title p {
+    margin-left: 5px;
+    font-weight: var(--fw-light);
+}
+
+.main {
+    flex: 1;
+}
+
+.footer {
+    flex: 0 0 100px;
+}
+
