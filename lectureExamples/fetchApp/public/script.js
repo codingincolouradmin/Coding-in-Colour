@@ -22,8 +22,7 @@ const fetchAPIData = async (city) => {
 // We only have special styles for Raining and Sunny, so for any other case -> don't change the style, keep it halloween colour
 
 const getButton = document.getElementById('action-button');
-const weatherDiv = document.getElementById('weather-data');
-const weatherInfo = document.getElementById('weather-info');
+const mainContainer = document.getElementsByClassName('main-container')[0];
 
 getButton.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -33,13 +32,30 @@ getButton.addEventListener('click', async (e) => {
 
     const weatherData = await fetchAPIData(inputValue);
     const simpleWeather = weatherData.weather[0].main;
-    console.log(simpleWeather);
+    const description = weatherData.weather[0].description;
+    console.log('length', mainContainer.childNodes.length);
+    if (mainContainer.childNodes.length > 7) {
+        const weatherDiv = document.getElementsByClassName('weather-data')[0];
+        weatherDiv.childNodes[0].textContent = inputValue ? inputValue: '';
+        weatherDiv.childNodes[1].textContent = simpleWeather ? simpleWeather: '';
+        weatherDiv.childNodes[2].textContent = description ? description : '';
+    } else {
+        // Create a new div, and insert it as a child of the main Container
+        const weatherDiv = document.createElement('div'); // weather div
+        const h1Elem = document.createElement('h1'); // create our h1
+        const p1Elem = document.createElement('p'); // create our p1
+        const p2Elem = document.createElement('p'); // create our p2
 
-    // Set the display to block if it's none
-    if (weatherDiv.style.display === 'none') {
-        weatherDiv.style.display = 'block';
+        // Set our content
+        h1Elem.textContent = inputValue ? inputValue: '';
+        p1Elem.textContent = simpleWeather ? simpleWeather: '';
+        p2Elem.textContent = description ? description : '';
+    
+        // Appending
+        weatherDiv.appendChild(h1Elem);
+        weatherDiv.appendChild(p1Elem);
+        weatherDiv.appendChild(p2Elem);
+        weatherDiv.className = 'weather-data';
+        mainContainer.appendChild(weatherDiv);
     }
-
-    weatherInfo.textContent = simpleWeather;
-
 })

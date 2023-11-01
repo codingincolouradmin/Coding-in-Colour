@@ -161,7 +161,10 @@ body {
 }
 
 .weather-data {
-    display: none;
+    border: 2px solid var(--clr-primary-halloween-active);
+    border-radius: 1rem;
+    padding: 15px;
+    color: var(--clr-primary-text-dark);
 }
 
 .footer {
