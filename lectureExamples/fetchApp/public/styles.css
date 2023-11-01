@@ -111,16 +111,20 @@ body {
 }
 
 .footer {
-    flex: 0 0 100px;
-}
-
-.footer {
     display: flex;
+    flex: 0 0 100px;
     flex-direction: row;
     justify-content: space-between;
     color: var(--clr-primary-halloween-active);
     border-top: 1px solid var(--clr-primary-text-dark);
-    padding: 15px;
+    padding: 0 15px 0 15px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .image-wrapper {
@@ -128,3 +132,7 @@ body {
     align-items: center;
 }
 
+.image-wrapper img {
+    width: 96px;
+    height: 96px;
+}
