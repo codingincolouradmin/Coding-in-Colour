@@ -23,6 +23,7 @@ const fetchAPIData = async (city) => {
 
 const getButton = document.getElementById('action-button');
 const weatherDiv = document.getElementById('weather-data');
+const weatherInfo = document.getElementById('weather-info');
 
 getButton.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -38,4 +39,7 @@ getButton.addEventListener('click', async (e) => {
     if (weatherDiv.style.display === 'none') {
         weatherDiv.style.display = 'block';
     }
+
+    weatherInfo.textContent = simpleWeather;
+
 })
