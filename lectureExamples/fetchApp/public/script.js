@@ -20,4 +20,4 @@ const printWeather = async () => {
 
 printWeather();
 // Weather we can expect -> weather.main (Clear, CLouds, Rain, Snow, Thunderstorm, Mist, Fog, Haze, Smoke, Drizzle, Tornado, Hurricane)
-// We only have special styles for Raining and Sunny, so for any other case -> don't change the style, keep it white colour
+// We only have special styles for Raining and Sunny, so for any other case -> don't change the style, keep it halloween colour

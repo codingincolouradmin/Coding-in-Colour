@@ -23,13 +23,14 @@
     /** Primary Colours */
     --clr-primary-halloween: #FEF5E6;
     --clr-primary-halloween-hover: #FDDEB0; 
-    --clr-primary-melon-active: #573500;
+    --clr-primary-halloween-active: #573500;
     --clr-primary-text-light: #FEF5E6;
     --clr-primary-text-dark: #573500;
 
     /** Secondary Colours */
     --clr-secondary-sun: #DD6031;
-    --clr-secondary-rain: #90C2E7;
+    --clr-secondary-rain: #23C9FF;
+    --clr-secondary-other: #573500;
 
     /** Sizes of Stuff */
     --screen-width: 412px;
@@ -39,7 +40,7 @@
     --button-width: 120px;
     --button-height: 50px;
 
-    --input-width: 300px;
+    --input-width: 350px;
     --input-height: 45px;
 
     --svg-dimension: 96px;
