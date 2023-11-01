@@ -110,6 +110,60 @@ body {
     flex: 1;
 }
 
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    gap: 40px;
+}
+
+.main-container p {
+    color: var(--clr-primary-text-dark);
+    font-weight: var(--fw-regular);
+
+}
+
+#action-input {
+    width: var(--input-width);
+    height: var(--input-height);
+    color: var(--clr-primary-text-dark);
+    border-radius: 0.25rem;
+    background: none;
+    border: 2px solid var(--clr-primary-text-dark);
+}
+
+#action-input::placeholder {
+    color: var(--clr-primary-text-dark);
+    font-weight: var(--fw-light);
+    padding-left: 10px;
+}
+
+#action-button {
+    width: var(--button-width);
+    height: var(--button-height);
+    background: none;
+    border: 2px solid var(--clr-primary-text-dark);
+    border-radius: 0.5rem;
+    color: var(--clr-primary-text-dark);
+}
+
+#action-button:hover {
+    background: var(--clr-primary-halloween-hover);
+    cursor: pointer;
+}
+
+#action-button:active {
+    background: var(--clr-primary-halloween-active);
+    color: var(--clr-primary-text-light);
+    cursor: pointer;
+}
+
+.weather-data {
+    display: none;
+}
+
 .footer {
     display: flex;
     flex: 0 0 100px;
