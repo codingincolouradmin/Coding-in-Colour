@@ -68,6 +68,19 @@ svg {
 html {
     font-size: var(--font-size);
     font-family: var(--font-family-default);
-    max-width: 412px;
-    max-height: 912px;
+    background: #FFFF;
+}
+
+body {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.phone {
+    width: 412px;
+    height: 715px;
+    background-color: var(--clr-primary-halloween);
+    border: 2px solid var(--clr-primary-text-dark);
+    border-radius: 0.5rem;
 }
