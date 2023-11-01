@@ -44,6 +44,8 @@
 
     --weather-display-width: 300px;
     --weather-display-height: 339px;
+
+    --svg-dimension: 96px;
 }
 
 /** Initial setup */
