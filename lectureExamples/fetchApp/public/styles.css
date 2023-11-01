@@ -17,6 +17,16 @@
     --fw-thin: 300;
     --fw-regular: 400;
     --fw-bold: 600;
+
+    /** Primary Colours */
+    --clr-primary-apricot: #FFC9B5;
+    --clr-primary-melon: #F7B1AB;
+    --clr-primary-ash-gray: #C7D3BF;
+
+    /** Secondary Colours */
+    --clr-secondary-sun: #C7D3BF;
+    --clr-secondary-snow: #FFFFFF;
+    --clr-secondary-rain: #F2C57C;
 }
 
 /** Initial setup */
@@ -41,4 +51,6 @@ svg {
 html {
     font-size: var(--font-size);
     font-family: var(--font-family-default);
+    max-width: 412px;
+    max-height: 912px;
 }
