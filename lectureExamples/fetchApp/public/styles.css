@@ -22,11 +22,12 @@
     --clr-primary-apricot: #FFC9B5;
     --clr-primary-melon: #F7B1AB;
     --clr-primary-ash-gray: #C7D3BF;
+    --clr-primary-rose: #F7DAD9;
 
     /** Secondary Colours */
-    --clr-secondary-sun: #C7D3BF;
-    --clr-secondary-snow: #FFFFFF;
-    --clr-secondary-rain: #F2C57C;
+    --clr-secondary-sun: #F2D0A4;
+    --clr-secondary-snow: #F7F7FF;
+    --clr-secondary-rain: #90C2E7;
 }
 
 /** Initial setup */
