@@ -114,3 +114,17 @@ body {
     flex: 0 0 100px;
 }
 
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--clr-primary-halloween-active);
+    border-top: 1px solid var(--clr-primary-text-dark);
+    padding: 15px;
+}
+
+.image-wrapper {
+    display: flex;
+    align-items: center;
+}
+
