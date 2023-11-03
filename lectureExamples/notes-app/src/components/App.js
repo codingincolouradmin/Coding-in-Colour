@@ -15,10 +15,19 @@ function App() {
     setY(newValue);
   }
 
+  const addNote = (e) => {
+    e.preventDefault() // Standard Practice
+    const updatedArray = [...x, y];
+    setX(updatedArray);
+    setY('');
+
+  }
+
   return (
     <div className="App">
       <Notes notes={x} />
-      <Input fieldInput={y} update={updateInput}/>
+      <Input fieldInput={y} update={updateInput}
+             clickAction={addNote}/>
     </div>
   );
 }
