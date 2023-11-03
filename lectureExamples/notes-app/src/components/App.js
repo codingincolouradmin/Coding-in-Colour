@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Notes from './Notes';
+import Input from './Input';
 
 function App() {
   const [x, setX] = useState([
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Notes notes={x} />
+      <Input />
     </div>
   );
 }
