@@ -9,10 +9,16 @@ function App() {
   ]);
   const [y, setY] = useState("");
 
+  const updateInput = (e) => {
+    e.preventDefault(); // Standard Practice
+    const newValue = e.target.value;
+    setY(newValue);
+  }
+
   return (
     <div className="App">
       <Notes notes={x} />
-      <Input />
+      <Input fieldInput={y} update={updateInput}/>
     </div>
   );
 }
