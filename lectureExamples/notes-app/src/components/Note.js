@@ -1,10 +1,10 @@
 
-function Note({note}) {
+function Note({text}) {
 
     return (
         <div className="note">
             <li>
-                {note}
+                {text}
             </li>
         </div>
     )

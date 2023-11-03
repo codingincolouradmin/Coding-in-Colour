@@ -2,16 +2,15 @@ import { useState } from 'react';
 import Notes from './Notes';
 
 function App() {
-  const [notes, setNotes] = useState([
-    "I like bananas",
-    "I like banana bread",
+  const [x, setX] = useState([
+    "Hello from France",
     "Hello from Canada"
   ]);
-  const [input, setInput] = useState("");
+  const [y, setY] = useState("");
 
   return (
     <div className="App">
-      <Notes notes={notes}/>
+      <Notes notes={x} />
     </div>
   );
 }
