@@ -1,0 +1,124 @@
+/* Fall Theme Styles with Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4e8c1;
+    color: #3e2723;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #8a4b08;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    color: #8a4b08;
+    text-align: center;
+}
+
+header {
+    background-color: #8a4b08;
+    color: #f4e8c1;
+    padding: 15px 30px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 20px;  /* Increase the font size or adjust as needed */
+}
+
+nav ul li a {
+    color: #f4e8c1;
+}
+
+.recipe-display {
+    display: flex;
+    justify-content: space-around;
+}
+
+article {
+    width: 30%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #8a4b08;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;    
+}
+
+article img {
+    max-width: 90%; 
+    height: auto;  
+    margin: 15px 0; 
+}
+
+article p {
+    font-size: 24px;
+}
+
+footer {
+    background-color: #3e2723;
+    color: #f4e8c1;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Form Styles */
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #8a4b08;
+    border-radius: 5px;
+    background-color: #f4e8c1;
+}
+
+form label, form input, form select, form textarea, form button {
+    width: 90%;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+form button {
+    cursor: pointer;
+    background-color: #8a4b08;
+    color: #f4e8c1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+article p {
+    text-align: center;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
+    }
+
+    .recipe-display {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    article {
+        flex-basis: 100%;
+        margin: 20px auto;
+    }
+}

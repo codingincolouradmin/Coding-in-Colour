@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Blog</title>
+    <link rel="stylesheet" href="style_layout.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#" class="selected">All Recipes</a></li>
+            <li><a href="#">Breakfast</a></li>
+            <li><a href="#">Lunch</a></li>
+            <li><a href="#">Dinner</a></li>
+            <li><a href="#">Desserts</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>All Recipes</h1>
+
+    <section class="recipe-display">
+        <article>
+            <img src="img/veggies.jpg">
+            <p>Ratatouille</p>
+        </article>
+        <article>
+            <img src="img/dessert.jpg">
+            <p>Pavlova</p>
+        </article>
+        <article>
+            <img src="img/meat.jpg">
+            <p>Meatballs</p>
+        </article>
+    </section>
+
+    <section class="submit-recipe">
+        <h2>Submit a Recipe</h2>
+        <form action="submit_form_here" method="post" enctype="multipart/form-data">
+            <label for="image">Recipe Image:</label>
+            <input type="file" id="image" name="recipeImage" required><br>
+
+            <label for="name">Recipe Name:</label>
+            <input type="text" id="name" name="recipeName" required><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="recipeDescription" rows="5" cols="50"></textarea><br>
+
+            <label for="category">Category:</label>
+            <select id="category" name="recipeCategory">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="desserts">Desserts</option>
+            </select><br>
+
+            <button type="submit">Submit Recipe</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>Recipe Blog &copy; 2023</p>
+</footer>
+
+</body>
+</html>
