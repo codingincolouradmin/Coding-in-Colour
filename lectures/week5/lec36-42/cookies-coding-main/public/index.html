@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies Coding</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <header>
+      <div>Logo</div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="#">About</a></li>
+          <li>
+            <a href="#" id="button"> Dark </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="bgrid">
+      <!-- main content container -->
+      <section id="gr_1">
+        <!-- services container -->
+        <section class="service-grid">
+          <article class="service">
+            <img
+              id="imged"
+              src="img/web.webp"
+              alt="Service image"
+              height="200px"
+              width="70%"
+            />
+            <p>Website</p>
+          </article>
+          <article class="service">
+            <img
+              id="imged"
+              src="img/android.avif"
+              alt="Service image"
+              height="200px"
+              width="70%"
+            />
+            <p>Android apps</p>
+          </article>
+          <article class="service">
+            <img
+              id="imged"
+              src="img/ai.jpg"
+              alt="Service image"
+              height="200px"
+              width="70%"
+            />
+            <p>Recommenders</p>
+          </article>
+        </section>
+        <!-- Testimonials slider -->
+        <section class="testimonials">
+          <img id="slide" height="400px" width="100%" />
+        </section>
+        <!-- qucik contact form  -->
+        <section class="contact-form">
+          <h2>Quick Contact</h2>
+          <form
+            action="subit_form_here"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <section id="formst">
+              <article id="formsec1">
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email Address" />
+              </article>
+              <article id="formsec2">
+                <textarea placeholder="How can we help you" rows="5"></textarea>
+              </article>
+            </section>
+          </form>
+          <button>Submit</button>
+        </section>
+      </section>
+      <!-- right-box container -->
+      <section id="gr_2">
+        <div class="faq">
+          <span> FAQ </span>
+          <div class="questionsContainer">
+            <div class="questionContainer">
+              <span
+                class="clickToExpand"
+                onclick="toggleExpandable('expandableAnswer1')"
+                >Question 1</span
+              >
+              <span id="expandableAnswer1"
+                >Answer 1: my answer is this answer</span
+              >
+            </div>
+            <div class="questionContainer">
+              <span
+                class="clickToExpand"
+                onclick="toggleExpandable('expandableAnswer2')"
+                >Question 2</span
+              >
+              <span id="expandableAnswer2">Answer 2</span>
+            </div>
+            <div class="questionContainer">
+              <span
+                class="clickToExpand"
+                onclick="toggleExpandable('expandableAnswer3')"
+                >Question 3</span
+              >
+              <span id="expandableAnswer3">Answer 3</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Foooter -->
+    <footer id="foot">
+      <div id="d1">
+        <span>Fb logo</span>
+        <span>x logo</span>
+        <span>Youtube logo</span>
+      </div>
+      <div id="d2">
+        <span>Address & phone</span>
+        <span>Hours of operation</span>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>

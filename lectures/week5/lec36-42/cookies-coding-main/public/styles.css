@@ -1,0 +1,159 @@
+:root {
+  --background-color: #d4dff1;
+  --bc: #efeef0;
+}
+.dark-theme {
+  --background-color: #fb1414;
+  --bc: #090808;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--background-color);
+}
+header {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  background-color: var(--bc);
+  padding: 10px;
+  grid-template-rows: 50px;
+}
+header div {
+  padding-top: 15px;
+  padding-left: 20px;
+  font-size: 18px;
+}
+nav {
+  margin-left: 50px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 60px;
+}
+nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+}
+#bgrid {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  column-gap: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.service {
+  flex: 1;
+
+  border-radius: 5px;
+  min-width: 150px;
+  height: 250px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+#imged {
+  border-radius: 20px;
+}
+#button {
+  padding: 10px;
+  padding-right: 40px;
+  background-color: blue;
+  color: white;
+  border-radius: 20px;
+}
+.testimonials {
+  margin: 20px;
+}
+#slide {
+  border-radius: 10px;
+}
+.faq {
+  min-width: 150px;
+  height: 880px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+  right: 10px;
+}
+
+.questionsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 95%;
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#formst {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: 20px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  align-items: center;
+  border: 2px solid black;
+
+  padding-bottom: 30px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 10px;
+}
+#foot {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  padding: 30px;
+  background-color: #efeef0;
+  text-align: center;
+}
+#d1 span {
+  margin-right: 10px;
+}
+#d2 span {
+  margin-right: 10px;
+}
+
+#expandableAnswer1 {
+  display: none;
+}
+
+#expandableAnswer2 {
+  display: none;
+}
+
+#expandableAnswer3 {
+  display: none;
+}
+
+.clickToExpand {
+  cursor: pointer;
+}
