@@ -3,31 +3,31 @@ import Notes from './Notes';
 import Input from './Input';
 
 function App() {
-  const [x, setX] = useState([
+  const [notes, setNotes] = useState([
     "Hello from France",
     "Hello from Canada"
   ]);
-  const [y, setY] = useState("");
+  const [inputText, setInputText] = useState("");
 
-  const updateInput = (e) => {
+  const updateTextInput = (e) => {
     e.preventDefault(); // Standard Practice
     const newValue = e.target.value;
-    setY(newValue);
+    setInputText(newValue);
   }
 
   const addNote = (e) => {
     e.preventDefault() // Standard Practice
-    const updatedArray = [...x, y];
-    setX(updatedArray);
-    setY('');
+    const updatedArray = [...notes, inputText];
+    setNotes(updatedArray);
+    setInputText('');
 
   }
 
   return (
     <div className="App">
-      <Notes notes={x} />
-      <Input fieldInput={y} update={updateInput}
-             clickAction={addNote}/>
+      <Notes notes={notes} />
+      <Input text={inputText} handleUpdateText={updateTextInput}
+             handleAddNote={addNote}/>
     </div>
   );
 }

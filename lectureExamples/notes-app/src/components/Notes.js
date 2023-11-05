@@ -5,7 +5,7 @@ function Notes({notes}) {
     return (
         <div className="notes">
             <h1>Notes</h1>
-            {notes.map((value) => <Note text={value}/>)}
+            {notes.map((note) => <Note noteTextContent={note}/>)}
 
             {/* [
             <Note text={"Hello from France"}/>, 
