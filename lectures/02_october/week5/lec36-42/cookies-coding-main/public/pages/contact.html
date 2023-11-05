@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link id="styles" rel="stylesheet" href="./contactStyles.css">
+    </head>
+
+    <header class="header">
+        <span class="siteLogo"> Logo </span>
+        <div class="navigationLinks">
+            <span class="spanLink"> Home </span>
+            <span class="spanLink"> Portfolio </span>
+            <span class="spanLink"> Contact </span>
+            <span class="spanLink"> About </span>
+        </div>
+        <select id="changeThemeDropdown">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
+    </header>
+    
+    <div class="main">
+
+        <div class="bigContainer">
+
+                <div class="leftSide">
+
+                    <form action="javascript:void(0);" id="myForm">
+                        <div class="fieldInputs">
+                            <label for="nameField"> Name: </label>
+                            <input type="text" id="nameField" placeholder="Please enter name..."/>
+                            <label for="emailField"> Email: </label>
+                            <input type="text" id="emailField" placeholder="Please enter email..."/>
+                            <label for="phoneField"> Phone #: </label>
+                            <input type="text" id="phoneField" placeholder="Please enter phone..."/>
+                            <label for="phoneField"> Message: </label>
+                            <textarea  rows="5"></textarea>
+                        </div>
+
+                        <div class="selection">
+                            <h3> What do you want to tell us? </h3>
+                            <select>
+                                <option value="option1">
+                                    Compare quotes
+                                </option>
+                                <option value="option2">
+                                    Provide feedback
+                                </option>
+                                <option value="option3">
+                                    Compare with competitors
+                                </option>
+                            </select>
+                            <button type="submit" value="Submit"> Submit </button>
+                        </div>
+
+                    
+                    </form>
+
+                </div>
+
+                
+    
+        
+
+        <div class="faq">
+            <div class="faqTitle">
+                <h3> FAQ </h3>
+            </div>
+            <div class="questionsContainer">
+                <div class="questionContainer">
+                    <span> Question 1 </span>
+                    <span> Answer 1 </span>
+                </div>
+                <div class="questionContainer">
+                    <span> Question 2 </span>
+                    <span> Answer 2 </span>
+                </div>
+                <div class="questionContainer">
+                    <span> Question 3 </span>
+                    <span> Answer 3 </span>
+                </div>
+                <button type="submit" value="Submit"> Newsletter </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer">
+        <div class="footerLinks">
+            <img src="../icons/youtube.svg" width="30px" height="50px"/>
+            <span> X </span>
+            <span> YouTube </span>
+        </div>
+        <div class="contactInfo">
+            <div>
+                <span> Address </span>
+                <span> Phone </span>
+            </div>
+            <div>
+                <span> Hours of Operation </span>
+            </div>
+        </div>
+    </footer>
+    <script src="./contactScript.js"></script>
+</html>

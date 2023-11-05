@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Practice</title>
+    <!-- External CSS link -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>Welcome to CSS Practice</h1>
+        <nav>
+            <ul>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#effects">Effects</a></li>
+                <li><a href="#selectors">Selectors</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="typography">
+        <h2 class="section-title">Typography</h2>
+        <p>Style this paragraph for font family, size, and weight. Use the color red.</p>
+        <span>Make this span text underlined and center aligned.</span>
+        <blockquote>
+            "Style this blockquote to have a different font family, size and color."
+        </blockquote>
+    </section>
+
+    <section id="colors">
+        <h2 class="section-title">Backgrounds and Colors</h2>
+        <div class="color-box">This div should have a teal background colour.</div>
+        <div class="color-box" id="unique-div">This div should have a different background colour than the previous div.</div>
+        <a href="https://www.google.com" target="_blank">Style this link to have a custom color and hover effect.</a>
+    </section>
+
+    <section id="lists">
+        <h2 class="section-title">List Styles</h2>
+        <ul>
+            <li>Use CSS to apply a different type of bullet point for this item.</li>
+            <li>Style this list item's font and color.</li>
+            <li>Style <a href="#">this link</a> differently than other links.</li>
+        </ul>
+    </section>
+
+    <section id="effects">
+        <h2 class="section-title">Visual Effects</h2>
+        <p class="shadowed-text">This text should have a text-shadow.</p>
+        <button class="hover-button">Hover over this button. It should change the cursor, color, and show a shadow.</button>
+        <div class="effect-box">This box should have a shadow effect around it.</div>
+    </section>
+
+    <section id="selectors">
+        <h2 class="section-title">Selectors</h2>
+        <p class="highlight">Style this text with a class selector.</p>
+        <p id="unique-text">Style this text with an ID selector.</p>
+        <div class="container">
+            <p>Style this paragraph using a nested element selector to target a p inside a .container.</p>
+            <p class="nested-highlight">Style this using a selector that targets a p with a specific class inside a .container.</p>
+        </div>
+        <a class="special-link" href="#">Style this link using a class selector.</a>
+    </section>
+
+    <footer>
+        <p>Happy Styling! - &copy; 2023</p>
+    </footer>
+
+</body>
+
+</html>

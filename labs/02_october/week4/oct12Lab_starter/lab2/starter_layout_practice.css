@@ -1,0 +1,81 @@
+/* General Resets */
+body, div, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f6f6;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* BOX MODEL */
+.box {
+    border: 5px solid #8a4b08;
+    margin: 10px;
+    background-color: #f4e8c1;
+}
+
+/* DISPLAY PROPERTY */
+.inline {
+    margin-right: 10px;
+    background-color: #8a4b08;
+    color: #f4e8c1;
+    padding: 5px;
+}
+
+.block {
+    background-color: #ca9359;
+    padding: 5px;
+}
+
+/* POSITION & Z-INDEX */
+.relative-box {
+    width: 250px;
+    height: 150px;
+    background-color: #d4a374;
+    margin-bottom: 10px;
+}
+
+.absolute-box {
+    background-color: #f4e8c1;
+    width: 100px;
+    height: 50px;
+}
+
+.fixed-box {
+    background-color: #8a4b08;
+    color: #f4e8c1;
+    padding: 10px;
+}
+
+/* FLEXBOX */
+.flex-container div {
+    background-color: #d4a374;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* GRID */
+.grid-container div {
+    background-color: #3e2723;
+    color: #f4e8c1;
+    padding: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    .flex-container div {
+        margin-bottom: 10px;
+    }
+}
