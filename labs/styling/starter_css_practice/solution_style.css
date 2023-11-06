@@ -1,0 +1,145 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+}
+
+.page-header {
+    background-color: #f4e8c1;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Typography section */
+#typography p {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+}
+
+#typography span {
+    text-decoration: underline;
+    text-align: center;
+    display: block;
+}
+
+#typography blockquote {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #555;
+}
+
+/* Colors section */
+.color-box {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.color-box:first-child {
+    background-color: teal;
+}
+
+#unique-div {
+    background-color: #f4e8c1;
+}
+
+#colors a {
+    color: #8a4b08;
+    text-decoration: none;
+}
+
+#colors a:hover {
+    color: #3e2723;
+    text-decoration: underline;
+}
+
+/* List section */
+#lists ul {
+    list-style-type: square;
+}
+
+#lists li:nth-child(2) {
+    font-size: 18px;
+    color: #8a4b08;
+}
+
+#lists a {
+    color: #f4e8c1;
+    background-color: #8a4b08;
+    padding: 5px;
+    text-decoration: none;
+}
+
+/* Effects section */
+.shadowed-text {
+    text-shadow: 2px 2px 2px #888888;
+}
+
+.hover-button {
+    background-color: #f4e8c1;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.hover-button:hover {
+    background-color: #d4a374;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.effect-box {
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Selectors section */
+.highlight {
+    background-color: #d4a374;
+    padding: 5px;
+    color: white;
+}
+
+#unique-text {
+    color: #8a4b08;
+}
+
+.container p {
+    color: #3e2723;
+}
+
+.container .nested-highlight {
+    background-color: #f4e8c1;
+    padding: 5px;
+}
+
+.special-link {
+    color: #3e2723;
+    background-color: #f4e8c1;
+    padding: 5px;
+    text-decoration: none;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #3e2723;
+    color: #f4e8c1;
+    padding: 10px;
+}
