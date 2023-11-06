@@ -1,0 +1,40 @@
+.rootDiv{
+    background-color: blue;
+    height: 100vh;
+    margin: 0;
+    
+}
+.list{
+    list-style-type: none;
+}
+.incard{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    text-align: center;
+    padding: 10px;
+    list-style-type: none;
+    margin: 10px;
+}
+.circ{
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 20px;
+    right:20px;
+    border-radius: 100% ;
+}
+.hiddenDiv{
+    position: absolute;
+    bottom:80px;
+    right: 80px;
+}
+.notes{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.imgcs{
+    height: 20px;
+}

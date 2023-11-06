@@ -4,8 +4,8 @@ import Input from './Input';
 
 function App() {
   const [notes, setNotes] = useState([
-    "Hello from France",
-    "Hello from Canada"
+    
+    {text:"Whats up", colour:""}
   ]);
   const [inputText, setInputText] = useState("");
 
@@ -14,20 +14,32 @@ function App() {
     const newValue = e.target.value;
     setInputText(newValue);
   }
-
+ 
   const addNote = (e) => {
     e.preventDefault() // Standard Practice
-    const updatedArray = [...notes, inputText];
+    const singleOb = {text:inputText, colour:""};
+    const updatedArray = [...notes, singleOb];
     setNotes(updatedArray);
     setInputText('');
 
   }
+  const [show, setShow] = useState(false);
 
   return (
-    <div className="App">
-      <Notes notes={notes} />
-      <Input text={inputText} handleUpdateText={updateTextInput}
-             handleAddNote={addNote}/>
+    <div className="rootDiv">
+      <h1 style={{textAlign:'center'}}>Notes app</h1>
+      <div><Notes notes={notes} /></div>
+      <div className='hiddenDiv'>
+        {
+          show && <Input text={inputText} handleUpdateText={updateTextInput}
+          handleAddNote={addNote}/>
+        }
+        
+      </div>
+      
+      <div className='circ' onClick={() => setShow(!show)}>
+
+      </div>
     </div>
   );
 }
