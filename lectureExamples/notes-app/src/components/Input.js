@@ -19,7 +19,6 @@ function Input({
       </select>
       <br />
       <button onClick={handleAddNote}>Save</button>
-      <button onClick={() => localStorage.setItem('notes', null)}>Clear All Notes</button>
     </div>
   );
 }

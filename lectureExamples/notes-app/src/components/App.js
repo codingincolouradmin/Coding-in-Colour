@@ -18,8 +18,7 @@ function App() {
   useEffect(() => {
     // Run this code here
     // We need to check if we even have our notes in localStorage
-    if (localStorage.getItem('notes') !== 'null') {
-      console.log('we enter this case');
+    if (localStorage.getItem('notes')) {
       // If we do, we grab what we need, and update our notes (setNotes)
       const storedNotes = JSON.parse(localStorage.getItem('notes'));
       setNotes(storedNotes);
