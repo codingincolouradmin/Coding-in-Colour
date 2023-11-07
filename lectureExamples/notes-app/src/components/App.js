@@ -47,6 +47,7 @@ function App() {
     setNotes(updatedArray);                                             // Updating our notes
     localStorage.setItem('notes', JSON.stringify(updatedArray))         // Put our notes in localstorage
     setInputText("");                                                   // Updating our text input
+    setShow(false);                                                     // Hide our input
   };
 
   return (
