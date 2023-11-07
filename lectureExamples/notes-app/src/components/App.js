@@ -14,7 +14,6 @@ function App() {
   const [inputText, setInputText] = useState("");                     // new input text state
   const [inputColor, setInputColor] = useState("atomic-tangerine");   // new input color state (default is atomic tangerine)
   const [show, setShow] = useState(false);                            // add new note input field show state
-  console.log('Rendered');
   useEffect(() => {
     // Run this code here
     // We need to check if we even have our notes in localStorage
