@@ -1,13 +1,10 @@
-import "../App.css";
+import heartIcon from '../assets/images/icheart2.png';
+
 function Note({ noteTextContent, color }) {
   return (
-    <div className="note">
-      <li className="incard" style={{ backgroundColor: color }}>
-        <div style={{ textAlign: "right" }}>
-          <img className="imgcs" src="./icheart2.png" alt="heart" />
-        </div>
-        <div>{noteTextContent}</div>
-      </li>
+    <div className="note" style={{ backgroundColor: `var(--${color})`}}>
+      <img className="heart-icon" src={heartIcon} alt="heart" />
+      <div class="note-content">{noteTextContent}</div>
     </div>
   );
 }

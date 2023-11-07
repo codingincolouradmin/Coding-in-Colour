@@ -1,0 +1,146 @@
+@font-face {
+  font-family: 'Outfit';
+  font-display: swap;
+  font-weight: 300, 400, 600;
+  src: url('../assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+  /** Font-family */
+  --font-family-default: 'Outfit';
+
+  /** Font-size */
+  --font-size: 18px;
+
+  /** Font-weights */
+  --fw-thin: 300;
+  --fw-regular: 400;
+  --fw-bold: 600;
+
+  /** Primary Note Colours */
+  --brown-sugar: #C57B57;
+  --atomic-tangerine: #F1AB86;
+  --cadet-gray: #9CAFB7;
+  --phlox: #C04CFD;
+  --vanilla: #ECE4B7;
+  --tea-green: #CFFFB3;
+
+  /** Primary Text/Border Colours */
+  --dark-brown: #251605;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+* {
+    margin: 0;
+    font: inherit;
+}
+
+
+html {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size);
+  color: var(--dark-brown);
+  background-color: var(--vanilla);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: var(--fw-bold);
+  padding: 1rem;
+}
+
+/** Notes CSS */
+.notes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  gap: 1rem;
+}
+
+.note {
+  height: 200px;
+  width: 200px;
+  background-color: var(--atomic-tangerine);
+  text-align: center;
+  list-style-type: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.heart-icon {
+  height: 20px;
+}
+
+/** Add Button */
+.add-circle {
+  background-color: #E9C180;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 100%;
+}
+
+.add-circle:hover {
+  cursor: pointer;
+}
+
+/** Our Hidden form input */
+.hiddenDiv {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+  bottom: 80px;
+  right: 80px;
+}
+.hiddenDiv input {
+  width: 250px;
+  height: 30px;
+  border: 2px solid var(--dark-brown);
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  background: none;
+}
+
+.hiddenDiv select {
+  width: 125px;
+  height: 30px;
+  border: 2px solid var(--dark-brown);
+  background: none;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+}
+.hiddenDiv select:hover {
+  cursor:pointer;
+}
+
+.hiddenDiv button {
+  width: 100px;
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid var(--dark-brown);
+  font-weight: var(--fw-bold);
+  background: none;
+}
+.hiddenDiv button:hover {
+  cursor:pointer;
+}
+
