@@ -6,6 +6,7 @@ import Input from "./Input";
 import { IoIosAdd } from "react-icons/io";
 
 function App() {
+  console.log('We are re-rendering'); // This is going to print to console, every time this component re-renders
   // all notes state
   const [notes, setNotes] = useState([
     { text: "Whats up", color: "brown-sugar" },
@@ -41,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <h1 style={{ textAlign: "center" }}>Notes app</h1>
-      <div class="my-notes">
+      <div className="my-notes">
         {/* notes component: list all notes */}
         <Notes notes={notes} />
       </div>

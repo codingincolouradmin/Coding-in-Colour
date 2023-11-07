@@ -4,7 +4,7 @@ function Note({ noteTextContent, color }) {
   return (
     <div className="note" style={{ backgroundColor: `var(--${color})`}}>
       <img className="heart-icon" src={heartIcon} alt="heart" />
-      <div class="note-content">{noteTextContent}</div>
+      <div className="note-content">{noteTextContent}</div>
     </div>
   );
 }
