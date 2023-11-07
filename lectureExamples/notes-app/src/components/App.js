@@ -1,6 +1,6 @@
 import "../styles/App.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Notes from "./Notes";
 import Input from "./Input";
 import { IoIosAdd } from "react-icons/io";
@@ -14,6 +14,17 @@ function App() {
   const [inputText, setInputText] = useState("");                     // new input text state
   const [inputColor, setInputColor] = useState("atomic-tangerine");   // new input color state (default is atomic tangerine)
   const [show, setShow] = useState(false);                            // add new note input field show state
+  useEffect(() => {
+    // Run this code here
+    // We need to check if we even have our notes in localStorage
+    if (localStorage.getItem('notes')) {
+      // If we do, we grab what we need, and update our notes (setNotes)
+      const storedNotes = JSON.parse(localStorage.getItem('notes'));
+      setNotes(storedNotes);
+    } else {
+      console.log('Our local storage is empty!');
+    }
+  }, [])
 
   // whenever I update input field then update inputText state
   const updateTextInput = (e) => {
@@ -35,13 +46,15 @@ function App() {
     const newNote = { text: inputText, color: inputColor };             // Creating a new note
     const updatedArray = [...notes, newNote];                           // Creating a new notes array with note added
     setNotes(updatedArray);                                             // Updating our notes
+    localStorage.setItem('notes', JSON.stringify(updatedArray))         // Put our notes in localstorage
     setInputText("");                                                   // Updating our text input
+    setShow(false);                                                     // Hide our input
   };
 
   return (
     <div className="App">
       <h1 style={{ textAlign: "center" }}>Notes app</h1>
-      <div class="my-notes">
+      <div className="my-notes">
         {/* notes component: list all notes */}
         <Notes notes={notes} />
       </div>
