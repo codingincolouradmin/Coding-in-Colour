@@ -1,0 +1,65 @@
+* {
+    background-color: lightblue;
+}
+
+span {
+    color: white;
+    font-weight: 609;
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: lightskyblue;
+}
+
+ul {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 10px;
+    list-style-type: none;
+    color: blue;
+    /* box-shadow: 2px 2px 2px 2px grey; */
+}
+
+ul span {
+    color: blue;
+    background: none;
+}
+
+li {
+    text-align: center;
+}
+
+li.myClass, div.myClass {
+    color:beige;
+}
+
+#firstChild {
+    color:coral;
+    font-weight: 609;
+}
+
+
+.halloween-button {
+background-color: #ff6600; /* Orange background color for Halloween */
+color: #fff; /* White text color */
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+position: relative;
+overflow: hidden;
+transition: background-color 0.3s;
+}
+
+/* Hover effect */
+.halloween-button:hover {
+background-color: #ff9933; /* Lighter orange on hover */
+}
+
+/* Click effect (scale and shadow) */
+.halloween-button:active {
+transform: scale(0.95);
+box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}

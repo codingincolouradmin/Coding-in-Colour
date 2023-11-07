@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="header">HTML Form</h1>
+    <form id="myForm">
+      <label>
+        Name:
+        <input
+          type="text"
+          name="form_name"
+          placeholder="enter your name "
+          id="id_name"
+          class="input_fields"
+          required
+          maxlength="20"
+        />
+      </label>
+      <br />
+      <br />
+      <label>
+        Email:
+        <input
+          type="text"
+          name="form_email"
+          placeholder="enter your email address "
+          id="id_email"
+          class="input_fields"
+          required
+        />
+      </label>
+      <br />
+      <br />
+      <label>
+        phone:
+        <input
+          type="tel"
+          name="form_phone"
+          placeholder="enter your email phone number "
+          id="id_phone"
+          class="input_fields"
+          required
+        />
+      </label>
+      <br />
+      <br />
+
+      <label>
+        your message:
+        <br />
+        <br />
+        <textarea
+          name="form_message"
+          id="id_message"
+          rows="10"
+          cols="25"
+        ></textarea>
+      </label>
+      <br />
+      <br />
+
+      <label>
+        I have confirmedmy information is correct
+        <input type="checkbox" id="id_check" value="cecked" />
+      </label>
+      <br />
+      <br />
+      <br />
+      <button type="submit" id="submit">Send</button>
+    </form>
+
+    <br /><br />
+    <h4>Name: <span id="name_output" style="font-weight: 200"></span></h4>
+    <h4>Email: <span id="email_output" style="font-weight: 200"></span></h4>
+    <h4>Phone: <span id="phone_output" style="font-weight: 200"></span></h4>
+    <h4>Message: <span id="message_output" style="font-weight: 200"></span></h4>
+    <h4>
+      checkbox Value: <span id="check_output" style="font-weight: 200"></span>
+    </h4>
+
+    <!-- <form action="submit_form.php" method="post" id="myForm" onsubmit="return validateForm()">
+ 
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" class="text" /><br /><br />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="text"
+        required
+      /><br /><br />
+      <span id="emailError" class="error" style="color: red"></span>
+
+      <br /><br />
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="form_pass"
+        name="password"
+        required
+      /><br /><br />
+
+      <label>checkboxes</label>
+      <br />
+
+      <input type="checkbox" name="selectList[]" value="selection1" />
+      selection1 <br />
+
+      <input type="checkbox" name="selectList[]" value="selection2" />
+      selection2 <br />
+      <br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="10" cols="20"></textarea>
+
+      <br /><br />
+
+      <input type="color" />
+      <input type="file" />
+
+
+      <button id="submit" type="submit">Sumbit</button>
+    </form> -->
+
+    <br /><br />
+    <!-- <form id="myForm2">
+      <label for="name2">second form:</label>
+      <input type="text" id="name2" name="name2" class="text" /><br /><br />
+    </form> -->
+
+    <script src="/lecture_35_example.js"></script>
+  </body>
+</html>

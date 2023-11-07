@@ -1,0 +1,116 @@
+body{
+
+    background-color: #f4e8c1 ;
+    color: #3e2723;
+    margin: 0;
+    padding: 0;
+}
+a{
+    color:#8a4b08;
+    text-decoration: none;
+    
+}
+h1,h2,h3{
+    color: #8a4b08 ;
+    text-align: center;
+}
+ header{
+  
+    background-color: #8a4b08;
+    color: #f4e8c1  ;
+    padding: 15px 30px;
+  
+   
+
+
+ }
+ nav{
+    text-align: center;
+ }
+ nav ul{
+    list-style-type: none;
+ }
+ nav ul li{
+    display: inline-block;
+    font-size:20px;
+    margin-right: 20px;
+    
+ }
+ nav ul li a{
+    color: #f4e8c1;
+ }
+ nav ul li a:hover{
+    color: black;
+ }
+.recipe-display{
+    display:flex;
+    justify-content: space-around;
+}
+article{
+    width: 30%;
+    border: 2px solid #8a4b08;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+article img{
+    max-width: 90%;
+    height: 200px;
+    margin:15px;
+}
+article p{
+    font-size: 24px;
+}
+
+footer{
+    background-color: #3e2723;
+    color: #f4e8c1;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+form{
+    max-width: 600px;
+    margin:20px auto;
+    padding: 20px;
+    border:1px solid #8a4b08;
+    border-radius: 5px;
+    background-color: #f4e8c1;
+}
+form label, form input,form select,form textarea, form button{
+    width: 90%;
+    font-size: 20px;
+    margin-bottom:10px;
+}
+form button{
+    cursor:pointer;
+    background-color: #8a4b08;
+    color: #f4e8c1;
+    border:none;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+form button:hover{
+    background-color: rgb(89, 21, 21);
+}
+form input::-webkit-file-upload-button:hover{
+    background-color: brown;
+    color:white
+}
+@media screen and (max-width: 768px){
+    nav ul li{
+        display: block;
+    }
+    .recipe-display{
+        flex-direction: column;
+        align-items: center;
+    }
+    article{
+        flex-basis:100%;
+        margin: 20px ;
+    }
+}
