@@ -1,8 +1,6 @@
 import Note from "./Note";
 
-function Notes({ notes, updateCount, search }) {
-  console.log('our search is ', search);
-  // notes is an array, ["Hello from France", "Hello from Canada"]
+function Notes({ notes, updateCount, search, sorted }) {
   const searchFilter = (search, note) => {
     const searchModified = search.toLowerCase().trim();
     if (searchModified == "") {
@@ -14,10 +12,17 @@ function Notes({ notes, updateCount, search }) {
 
   return (
     <div className="notes">
-      {/* iterated over all notes */}
-      {notes.filter((note) => searchFilter(search, note)).map((note) => (
-        <Note note={note} updateCount={updateCount} />
-      ))}
+      {sorted ? 
+        notes.filter((note) => searchFilter(search, note))
+        .sort((a, b) => b.heartCount - a.heartCount)
+        .map((note) => (
+          <Note note={note} updateCount={updateCount} />
+        ))
+        :
+        notes.filter((note) => searchFilter(search, note)).map((note) => (
+          <Note note={note} updateCount={updateCount} />
+        )) 
+      }
     </div>
   );
 }

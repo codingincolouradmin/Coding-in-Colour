@@ -22,6 +22,9 @@ function App() {
 
   // state needed to search for a note
   const [noteSearch, setNoteSearch] = useState("");
+
+  // state needed to handle whether or not we want to sort
+  const [sorted, setSorted] = useState(false);
   
   // Will be adjusted later
   const [show, setShow] = useState(false); // add new note input field show state
@@ -56,6 +59,12 @@ function App() {
     const search = e.target.value;
     setNoteSearch(search);
   };
+  
+  // handle sorting our notes
+  const handleSort = (e) => {
+    e.preventDefault();
+    setSorted(!sorted);
+  };
 
   // handle adding our note
   const addNote = (e) => {
@@ -89,14 +98,6 @@ function App() {
     setNotes(updatedNotes); // update our notes state
   };
 
-  // sort notes based on heartCount
-  const sortNotes = (e) => {
-    e.preventDefault();
-
-    // const sortedData = [...notes].sort((a, b) => b.heartCount - a.heartCount);
-
-    // setNotes(sortedData);
-  };
 
   // search notes 
   const searchedNotes = (e) => {
@@ -127,7 +128,7 @@ function App() {
         <br />
         
         {/* notes component: list all notes */}
-        <Notes notes={notes} updateCount={updateCount} search={noteSearch} />
+        <Notes notes={notes} updateCount={updateCount} search={noteSearch} sorted={sorted} />
       </div>
       <div className="hiddenDiv">
         {/* toggle add new note */}
@@ -170,7 +171,7 @@ function App() {
      
       
       {
-        show && <HiSortDescending className="add-circle2" onClick={sortNotes} />
+        show && <HiSortDescending className="add-circle2" onClick={handleSort} />
       }
       {
         show &&  <IoIosSearch className="add-circle1" onClick={() => setShow3(!show3)} />
