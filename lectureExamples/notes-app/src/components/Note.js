@@ -12,7 +12,7 @@ function Note({ note, updateCount }) {
       />
       <p>{note.heartCount}</p>
       <div className="title-content">{note.title}</div>
-      <div className="note-content">{note.text}</div>
+      <div className="note-content">{note.content}</div>
       <div className="author-content">{note.author}</div>
     </div>
   );

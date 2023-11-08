@@ -10,8 +10,8 @@ function App() {
   
   // all notes state
   const [notes, setNotes] = useState([
-    { id: 1, text: "Whats up", color: "brown-sugar", heartCount: 0 , title:"first", author:"James Bond"},
-    { id: 2, text: "How are you", color: "phlox", heartCount: 0 , title:"second",  author:"Ronaldo"},
+    { id: 1, content: "Whats up", color: "brown-sugar", heartCount: 0 , title:"first", author:"James Bond"},
+    { id: 2, content: "How are you", color: "phlox", heartCount: 0 , title:"second",  author:"Ronaldo"},
   ]);
 
   // state needed to handle user input for a note
@@ -57,12 +57,11 @@ function App() {
     setNoteSearch(search);
   };
 
-
-  // whenever "save" button is clicked, then update notes with new note object
+  // handle adding our note
   const addNote = (e) => {
-    const newUniqueID = uuidv4();
-    console.log(newUniqueID);
     e.preventDefault(); // Standard Practice
+    const newUniqueID = uuidv4(); // Get a unique id
+    // Creating a new note
     const newNote = {
       id: newUniqueID,
       title:noteTitle,
@@ -70,11 +69,10 @@ function App() {
       author:noteAuthor,
       color: noteColor,
       heartCount: 0,
-    }; // Creating a new note
+    }; 
     const updatedArray = [...notes, newNote]; // Creating a new notes array with note added
     setNotes(updatedArray); // Updating our notes
     // setPrevNote(updatedArray); //Saving previous notes
-    // // localStorage.setItem("notes", JSON.stringify(updatedArray)); // Put our notes in localstorage
     // setInputText(""); // Updating our text input
     setShow(false); // Hide our input
   };
@@ -82,20 +80,13 @@ function App() {
   // update heartCount when clicking the heart icon of each note
   const updateCount = (e, id) => {
     e.preventDefault();
-
-    // find the index of the clicked note inside notes state
-    const index = notes.findIndex((note) => note.id === id);
-
-    // increase count of clicked note
-    const updatedNotes = [...notes];
+    const index = notes.findIndex((note) => note.id === id); // find the index of note
+    const updatedNotes = [...notes];   // make a copy of all our notes
     updatedNotes[index] = {
       ...updatedNotes[index],
       heartCount: updatedNotes[index].heartCount + 1,
-    };
-
-    // updating notes state
-    setNotes(updatedNotes);
-    // localStorage.setItem("notes", JSON.stringify(updatedNotes));
+    };  // update that copy with our updated note
+    setNotes(updatedNotes); // update our notes state
   };
 
   // sort notes based on heartCount
@@ -105,7 +96,6 @@ function App() {
     // const sortedData = [...notes].sort((a, b) => b.heartCount - a.heartCount);
 
     // setNotes(sortedData);
-    // localStorage.setItem("notes", JSON.stringify(sortedData));
   };
 
   // search notes 
@@ -117,7 +107,6 @@ function App() {
   //  })
 
   //   setNotes(searchedData);
-    // localStorage.setItem("notes", JSON.stringify(searchedData));
   };
 
   // previous notes 
@@ -127,7 +116,6 @@ function App() {
    
 
     // setNotes(prevNote);
-    // localStorage.setItem("notes", JSON.stringify(prevNote));
   };
 
   
@@ -139,7 +127,7 @@ function App() {
         <br />
         
         {/* notes component: list all notes */}
-        <Notes notes={notes} updateCount={updateCount} />
+        <Notes notes={notes} updateCount={updateCount} search={noteSearch} />
       </div>
       <div className="hiddenDiv">
         {/* toggle add new note */}
