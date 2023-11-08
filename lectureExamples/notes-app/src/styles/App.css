@@ -86,12 +86,39 @@ h1 {
 }
 
 /** Add Button */
-.add-circle {
+.add-circle3 {
   background-color: #E9C180;
   height: 50px;
   width: 50px;
   position: absolute;
   bottom: 20px;
+  right: 20px;
+  border-radius: 100%;
+}
+.add-circle {
+  background-color: #E9C180;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  border-radius: 100%;
+}
+.add-circle1 {
+  background-color: #E9C180;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 140px;
+  right: 20px;
+  border-radius: 100%;
+}
+.add-circle2 {
+  background-color: #E9C180;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 200px;
   right: 20px;
   border-radius: 100%;
 }
@@ -110,6 +137,11 @@ h1 {
   bottom: 80px;
   right: 80px;
 }
+.hoveredSearch{
+  position: absolute;
+  bottom:90px;
+  right: 20px;
+}
 .hiddenDiv input {
   width: 250px;
   height: 30px;
@@ -118,6 +150,7 @@ h1 {
   margin-bottom: 0.5rem;
   background: none;
 }
+
 
 .hiddenDiv select {
   width: 125px;

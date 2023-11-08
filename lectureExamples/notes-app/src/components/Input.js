@@ -2,12 +2,20 @@ function Input({
   text,
   handleUpdateText,
   color,
+  title,
+  author,
+  handleUpdateAuthor,
+  handleUpdateTitle,
   handleUpdateColor,
   handleAddNote,
 }) {
   return (
     <div className="noteInput">
-      <input value={text} onChange={handleUpdateText} />
+      <input value={title} onChange={handleUpdateTitle} placeholder="Title"/>
+      <br />
+      <input value={text} onChange={handleUpdateText} placeholder="Note"/>
+      <br />
+      <input value={author} onChange={handleUpdateAuthor} placeholder="Author" />
       <br />
       <select value={color} onChange={handleUpdateColor}>
         <option value="">select color</option>
