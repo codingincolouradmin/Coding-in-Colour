@@ -11,7 +11,9 @@ function Note({ note, updateCount }) {
         onClick={(e) => updateCount(e, note.id)}
       />
       <p>{note.heartCount}</p>
+      <div className="title-content">{note.title}</div>
       <div className="note-content">{note.text}</div>
+      <div className="author-content">{note.author}</div>
     </div>
   );
 }
