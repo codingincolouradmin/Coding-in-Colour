@@ -2,8 +2,6 @@ import "../styles/App.css";
 import { useState } from "react";
 import Notes from "./Notes";
 import Input from "./Input";
-import { IoIosAdd, IoIosMore, IoIosSearch } from "react-icons/io";
-import { HiSortDescending } from "react-icons/hi";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
@@ -25,11 +23,6 @@ function App() {
 
   // state needed to handle whether or not we want to sort
   const [sorted, setSorted] = useState(false);
-  
-  // Will be adjusted later
-  const [show, setShow] = useState(false); // add new note input field show state
-  const [show2, setShow2] = useState(false); // add new note input field show state
-  const [show3, setShow3] = useState(false); // add new note input field show state
   
   // Functions to handle updating our inputs for creating a new note
   const updateTitle = (e) => {
@@ -54,7 +47,7 @@ function App() {
   }
 
   // whenever search is selected the unpdate inputSearch state
-  const updateSearchInput = (e) => {
+  const updateSearch = (e) => {
     e.preventDefault();
     const search = e.target.value;
     setNoteSearch(search);
@@ -81,7 +74,7 @@ function App() {
     }; 
     const updatedArray = [...notes, newNote]; // Creating a new notes array with note added
     setNotes(updatedArray); // Updating our notes
-    setShow(false); // Hide our input
+    // setShow(false); // Hide our input
   };
 
   // update heartCount when clicking the heart icon of each note
@@ -96,86 +89,22 @@ function App() {
     setNotes(updatedNotes); // update our notes state
   };
 
-
-  // search notes 
-  const searchedNotes = (e) => {
-    e.preventDefault();
-
-  //  let searchedData = notes.filter(function(note){
-  //   return note.title === inputSearch;
-  //  })
-
-  //   setNotes(searchedData);
-  };
-
-  // previous notes 
-  const previousNotes = (e) => {
-    e.preventDefault();
-
-   
-
-    // setNotes(prevNote);
-  };
-
-  
+  const inputProps = {
+    noteTitle, noteContent, noteAuthor, noteColor, noteSearch, // note's fields themselves
+    updateTitle, updateContent, updateAuthor, updateColor, updateSearch, // update note's fields
+    addNote, // handles adding the note
+    sorted, handleSort
+  }
   
   return (
     <div className="App">
       <h1 style={{ textAlign: "center" }}>Notes app</h1>
       <div className="my-notes">
-        <br />
-        
-        {/* notes component: list all notes */}
         <Notes notes={notes} updateCount={updateCount} search={noteSearch} sorted={sorted} />
       </div>
-      <div className="hiddenDiv">        
-        <div className="hoveredSearch">
-          {show3 && (
-            // adding new note form
-            (<input value={noteSearch} onChange={updateSearchInput}/>)
-          
-          
-          )}
-          {show3 && (
-            // adding new note form
-          
-            (<div>
-              <button onClick={searchedNotes}>Search</button>
-              <button onClick={previousNotes}>Refresh</button>
-            </div>)
-          
-          )}
-        </div>
-        
-        {show2 && (
-          // adding new note form
-          <Input
-            title={noteTitle}
-            handleUpdateTitle={updateTitle}
-            text={noteContent}
-            handleUpdateText={updateContent}
-            author={noteAuthor}
-            handleUpdateAuthor={updateAuthor}
-            color={noteColor}
-            handleUpdateColor={updateColor}
-            handleAddNote={addNote}
-          />
-        )}
+      <div className="hiddenDiv">
+        <Input {...inputProps} />        
       </div>
-
-      
-     
-      
-      {
-        show && <HiSortDescending className="add-circle2" onClick={handleSort} />
-      }
-      {
-        show &&  <IoIosSearch className="add-circle1" onClick={() => setShow3(!show3)} />
-      }
-      {
-        show && <IoIosAdd className="add-circle" onClick={() => setShow2(!show2)} />
-      }
-      <IoIosMore className="add-circle3" onClick={() => setShow(!show)} />
     </div>
   );
 }
