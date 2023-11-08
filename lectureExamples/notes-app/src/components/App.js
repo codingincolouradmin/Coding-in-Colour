@@ -1,5 +1,4 @@
 import "../styles/App.css";
-
 import { useState, useEffect } from "react";
 import Notes from "./Notes";
 import Input from "./Input";
@@ -14,6 +13,8 @@ function App() {
     { id: 2, text: "How are you", color: "phlox", heartCount: 0 , title:"second", author:"Ronaldo"},
   ]);
 
+  console.log('rendering component');
+
   const [prevNote, setPrevNote] = useState(""); // new input text state
   const [inputSearch, setInputSearch] = useState(""); // new input text state
   const [inputTitle, setInputTitle] = useState(""); // new input text state
@@ -23,17 +24,18 @@ function App() {
   const [show, setShow] = useState(false); // add new note input field show state
   const [show2, setShow2] = useState(false); // add new note input field show state
   const [show3, setShow3] = useState(false); // add new note input field show state
-  useEffect(() => {
-    // Run this code here
-    // We need to check if we even have our notes in localStorage
-    if (localStorage.getItem("notes")) {
-      // If we do, we grab what we need, and update our notes (setNotes)
-      const storedNotes = JSON.parse(localStorage.getItem("notes"));
-      setNotes(storedNotes);
-    } else {
-      console.log("Our local storage is empty!");
-    }
-  }, []);
+  
+  // useEffect(() => {
+  //   // Run this code here
+  //   // We need to check if we even have our notes in localStorage
+  //   if (localStorage.getItem("notes")) {
+  //     // If we do, we grab what we need, and update our notes (setNotes)
+  //     const storedNotes = JSON.parse(localStorage.getItem("notes"));
+  //     setNotes(storedNotes);
+  //   } else {
+  //     console.log("Our local storage is empty!");
+  //   }
+  // }, []);
 
   // whenever search is selected the unpdate inputSearch state
   const updateSearchInput = (e) => {
@@ -85,7 +87,7 @@ function App() {
     const updatedArray = [...notes, newNote]; // Creating a new notes array with note added
     setNotes(updatedArray); // Updating our notes
     setPrevNote(updatedArray); //Saving previous notes
-    localStorage.setItem("notes", JSON.stringify(updatedArray)); // Put our notes in localstorage
+    // localStorage.setItem("notes", JSON.stringify(updatedArray)); // Put our notes in localstorage
     setInputText(""); // Updating our text input
     setShow(false); // Hide our input
   };
@@ -106,7 +108,7 @@ function App() {
 
     // updating notes state
     setNotes(updatedNotes);
-    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+    // localStorage.setItem("notes", JSON.stringify(updatedNotes));
   };
 
   // sort notes based on heartCount
@@ -116,7 +118,7 @@ function App() {
     const sortedData = [...notes].sort((a, b) => b.heartCount - a.heartCount);
 
     setNotes(sortedData);
-    localStorage.setItem("notes", JSON.stringify(sortedData));
+    // localStorage.setItem("notes", JSON.stringify(sortedData));
   };
 
   // search notes 
@@ -128,7 +130,7 @@ function App() {
    })
 
     setNotes(searchedData);
-    localStorage.setItem("notes", JSON.stringify(searchedData));
+    // localStorage.setItem("notes", JSON.stringify(searchedData));
   };
 
   // previous notes 
@@ -138,7 +140,7 @@ function App() {
    
 
     setNotes(prevNote);
-    localStorage.setItem("notes", JSON.stringify(prevNote));
+    // localStorage.setItem("notes", JSON.stringify(prevNote));
   };
 
   
