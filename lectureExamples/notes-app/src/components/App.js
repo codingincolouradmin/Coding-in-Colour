@@ -1,5 +1,5 @@
 import "../styles/App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Notes from "./Notes";
 import Input from "./Input";
 import { IoIosAdd, IoIosMore, IoIosSearch } from "react-icons/io";
@@ -81,8 +81,6 @@ function App() {
     }; 
     const updatedArray = [...notes, newNote]; // Creating a new notes array with note added
     setNotes(updatedArray); // Updating our notes
-    // setPrevNote(updatedArray); //Saving previous notes
-    // setInputText(""); // Updating our text input
     setShow(false); // Hide our input
   };
 
@@ -130,9 +128,7 @@ function App() {
         {/* notes component: list all notes */}
         <Notes notes={notes} updateCount={updateCount} search={noteSearch} sorted={sorted} />
       </div>
-      <div className="hiddenDiv">
-        {/* toggle add new note */}
-        
+      <div className="hiddenDiv">        
         <div className="hoveredSearch">
           {show3 && (
             // adding new note form
