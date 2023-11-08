@@ -7,69 +7,56 @@ import { HiSortDescending } from "react-icons/hi";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
+  
   // all notes state
   const [notes, setNotes] = useState([
-    { id: 1, text: "Whats up", color: "brown-sugar", heartCount: 0 , title:"first",author:"James Bond"},
-    { id: 2, text: "How are you", color: "phlox", heartCount: 0 , title:"second", author:"Ronaldo"},
+    { id: 1, text: "Whats up", color: "brown-sugar", heartCount: 0 , title:"first", author:"James Bond"},
+    { id: 2, text: "How are you", color: "phlox", heartCount: 0 , title:"second",  author:"Ronaldo"},
   ]);
 
-  console.log('rendering component');
+  // state needed to handle user input for a note
+  const [noteTitle, setNoteTitle] = useState("");
+  const [noteContent, setNoteContent] = useState("");
+  const [noteAuthor, setNoteAuthor] = useState("");
+  const [noteColor, setNoteColor] = useState("atomic-tangerine");
 
-  const [prevNote, setPrevNote] = useState(""); // new input text state
-  const [inputSearch, setInputSearch] = useState(""); // new input text state
-  const [inputTitle, setInputTitle] = useState(""); // new input text state
-  const [inputText, setInputText] = useState(""); // new input text state
-  const [inputAuthor, setInputAuthor] = useState(""); // new input text state
-  const [inputColor, setInputColor] = useState("atomic-tangerine"); // new input color state (default is atomic tangerine)
+  // state needed to search for a note
+  const [noteSearch, setNoteSearch] = useState("");
+  
+  // Will be adjusted later
   const [show, setShow] = useState(false); // add new note input field show state
   const [show2, setShow2] = useState(false); // add new note input field show state
   const [show3, setShow3] = useState(false); // add new note input field show state
   
-  // useEffect(() => {
-  //   // Run this code here
-  //   // We need to check if we even have our notes in localStorage
-  //   if (localStorage.getItem("notes")) {
-  //     // If we do, we grab what we need, and update our notes (setNotes)
-  //     const storedNotes = JSON.parse(localStorage.getItem("notes"));
-  //     setNotes(storedNotes);
-  //   } else {
-  //     console.log("Our local storage is empty!");
-  //   }
-  // }, []);
+  // Functions to handle updating our inputs for creating a new note
+  const updateTitle = (e) => {
+    e.preventDefault();
+    const newTitle = e.target.value;
+    setNoteTitle(newTitle);
+  }
+  const updateContent = (e) => {
+    e.preventDefault();
+    const newContent = e.target.value;
+    setNoteContent(newContent);
+  }
+  const updateAuthor = (e) => {
+    e.preventDefault();
+    const newAuthor = e.target.value;
+    setNoteAuthor(newAuthor);
+  }
+  const updateColor = (e) => {
+    e.preventDefault();
+    const newColor = e.target.value;
+    setNoteColor(newColor);
+  }
 
   // whenever search is selected the unpdate inputSearch state
   const updateSearchInput = (e) => {
     e.preventDefault();
-    const newValue = e.target.value;
-    setInputSearch(newValue);
+    const search = e.target.value;
+    setNoteSearch(search);
   };
 
-  // whenever title is selected the unpdate inputTitle state
-  const updateTextTitle = (e) => {
-    e.preventDefault();
-    const newValue = e.target.value;
-    setInputTitle(newValue);
-  };
-
-  // whenever I update input field then update inputText state
-  const updateTextInput = (e) => {
-    e.preventDefault(); // Standard Practice
-    const newValue = e.target.value;
-    setInputText(newValue);
-  };
-  // whenever author is selected the unpdate inputAuthor state
-  const updateTextAuthor = (e) => {
-    e.preventDefault();
-    const newValue = e.target.value;
-    setInputAuthor(newValue);
-  };
-
-  // whenever a color is selected the unpdate inputColor state
-  const updateColorInput = (e) => {
-    e.preventDefault();
-    const newValue = e.target.value;
-    setInputColor(newValue);
-  };
 
   // whenever "save" button is clicked, then update notes with new note object
   const addNote = (e) => {
@@ -78,17 +65,17 @@ function App() {
     e.preventDefault(); // Standard Practice
     const newNote = {
       id: newUniqueID,
-      title:inputTitle,
-      text: inputText,
-      author:inputAuthor,
-      color: inputColor,
+      title:noteTitle,
+      text: noteContent,
+      author:noteAuthor,
+      color: noteColor,
       heartCount: 0,
     }; // Creating a new note
     const updatedArray = [...notes, newNote]; // Creating a new notes array with note added
     setNotes(updatedArray); // Updating our notes
-    setPrevNote(updatedArray); //Saving previous notes
-    // localStorage.setItem("notes", JSON.stringify(updatedArray)); // Put our notes in localstorage
-    setInputText(""); // Updating our text input
+    // setPrevNote(updatedArray); //Saving previous notes
+    // // localStorage.setItem("notes", JSON.stringify(updatedArray)); // Put our notes in localstorage
+    // setInputText(""); // Updating our text input
     setShow(false); // Hide our input
   };
 
@@ -115,9 +102,9 @@ function App() {
   const sortNotes = (e) => {
     e.preventDefault();
 
-    const sortedData = [...notes].sort((a, b) => b.heartCount - a.heartCount);
+    // const sortedData = [...notes].sort((a, b) => b.heartCount - a.heartCount);
 
-    setNotes(sortedData);
+    // setNotes(sortedData);
     // localStorage.setItem("notes", JSON.stringify(sortedData));
   };
 
@@ -125,11 +112,11 @@ function App() {
   const searchedNotes = (e) => {
     e.preventDefault();
 
-   let searchedData = notes.filter(function(note){
-    return note.title === inputSearch;
-   })
+  //  let searchedData = notes.filter(function(note){
+  //   return note.title === inputSearch;
+  //  })
 
-    setNotes(searchedData);
+  //   setNotes(searchedData);
     // localStorage.setItem("notes", JSON.stringify(searchedData));
   };
 
@@ -139,7 +126,7 @@ function App() {
 
    
 
-    setNotes(prevNote);
+    // setNotes(prevNote);
     // localStorage.setItem("notes", JSON.stringify(prevNote));
   };
 
@@ -160,7 +147,7 @@ function App() {
         <div className="hoveredSearch">
           {show3 && (
             // adding new note form
-            (<input value={inputSearch} onChange={updateSearchInput}/>)
+            (<input value={noteSearch} onChange={updateSearchInput}/>)
           
           
           )}
@@ -178,14 +165,14 @@ function App() {
         {show2 && (
           // adding new note form
           <Input
-            title={inputTitle}
-            handleUpdateTitle={updateTextTitle}
-            text={inputText}
-            handleUpdateText={updateTextInput}
-            author={inputAuthor}
-            handleUpdateAuthor={updateTextAuthor}
-            color={inputColor}
-            handleUpdateColor={updateColorInput}
+            title={noteTitle}
+            handleUpdateTitle={updateTitle}
+            text={noteContent}
+            handleUpdateText={updateContent}
+            author={noteAuthor}
+            handleUpdateAuthor={updateAuthor}
+            color={noteColor}
+            handleUpdateColor={updateColor}
             handleAddNote={addNote}
           />
         )}

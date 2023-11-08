@@ -10,6 +10,10 @@ function Notes({ notes, updateCount }) {
       ))}
     </div>
   );
+
+  // ["c", "b", "a"]
+  // ["b", "a"]
+  // ["a" ,"b"]
 }
 
 export default Notes;
