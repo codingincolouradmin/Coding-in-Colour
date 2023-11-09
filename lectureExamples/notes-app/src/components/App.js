@@ -1,8 +1,14 @@
 import "../styles/App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Notes from "./Notes";
 import Input from "./Input";
 import { v4 as uuidv4 } from "uuid";
+import Axios from 'axios';
+// get-> getting info
+//post-> add info
+//put-> change info in an id
+//delete-> delete an object
+const url = 'https://6541c4b9f0b8287df1fed384.mockapi.io/notesapp';
 
 function App() {
   
@@ -11,6 +17,18 @@ function App() {
     { id: 1, content: "Whats up", color: "brown-sugar", heartCount: 0 , title:"first", author:"James Bond"},
     { id: 2, content: "How are you", color: "phlox", heartCount: 0 , title:"second",  author:"Ronaldo"},
   ]);
+  useEffect(() => {
+
+    Axios.get(url).then((response)=> {
+      
+      setNotes(response.data);
+
+      
+      
+    })
+
+
+  },[])
 
   // state needed to handle user input for a note
   const [noteTitle, setNoteTitle] = useState("");
@@ -67,7 +85,7 @@ function App() {
     const newNote = {
       id: newUniqueID,
       title:noteTitle,
-      text: noteContent,
+      content: noteContent,
       author:noteAuthor,
       color: noteColor,
       heartCount: 0,
@@ -75,6 +93,9 @@ function App() {
     const updatedArray = [...notes, newNote]; // Creating a new notes array with note added
     setNotes(updatedArray); // Updating our notes
     // setShow(false); // Hide our input
+    Axios.post(url,newNote);
+    
+    
   };
 
   // update heartCount when clicking the heart icon of each note
@@ -82,11 +103,26 @@ function App() {
     e.preventDefault();
     const index = notes.findIndex((note) => note.id === id); // find the index of note
     const updatedNotes = [...notes];   // make a copy of all our notes
+    Axios.put(url+"/"+id,{
+      heartCount: updatedNotes[index].heartCount + 1
+    })
     updatedNotes[index] = {
       ...updatedNotes[index],
       heartCount: updatedNotes[index].heartCount + 1,
     };  // update that copy with our updated note
     setNotes(updatedNotes); // update our notes state
+  };
+
+  // Delete note when clicking the cross icon of each note
+  const deleteNote = (e, id) => {
+    e.preventDefault();
+    // Axios.delete(url+"/"+id).then((response)=>{
+
+    //   setNotes(response.data); // update our notes state
+    // })
+    
+    
+    
   };
 
   const inputProps = {
@@ -100,7 +136,7 @@ function App() {
     <div className="App">
       <h1 style={{ textAlign: "center" }}>Notes app</h1>
       <div className="my-notes">
-        <Notes notes={notes} updateCount={updateCount} search={noteSearch} sorted={sorted} />
+        <Notes notes={notes} updateCount={updateCount} deleteNote={deleteNote} search={noteSearch} sorted={sorted} />
       </div>
       <div className="hiddenDiv">
         <Input {...inputProps} />        

@@ -104,6 +104,15 @@ h1 {
   right: 20px;
   border-radius: 100%;
 }
+.add-circle3 {
+  background-color: #E9C180;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 100%;
+}
 .add-circle1 {
   background-color: #E9C180;
   height: 50px;
@@ -129,13 +138,12 @@ h1 {
 
 /** Our Hidden form input */
 .hiddenDiv {
-  position: absolute;
+  
   display: flex;
   flex-direction: column;
   padding: 1rem;
   border-radius: 10px;
-  bottom: 80px;
-  right: 80px;
+  
 }
 .hoveredSearch{
   position: absolute;
@@ -175,4 +183,25 @@ h1 {
 .hiddenDiv button:hover {
   cursor:pointer;
 }
+.add-fields{
+  position: absolute;
+  right:100px;
+  bottom: 100px;
+}
+.search-fields{
+  position: absolute;
+  right:100px;
+  bottom: 150px;
 
+}
+.delete-icon{
+  height: 20px;
+}
+.card-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  
+
+}
