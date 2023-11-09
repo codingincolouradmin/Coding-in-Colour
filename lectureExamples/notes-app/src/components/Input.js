@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IoIosMore, IoIosSearch } from "react-icons/io";
+import { IoIosMore } from "react-icons/io";
 import { HiSortDescending } from "react-icons/hi";
 import AddNote from './AddNote';
 import SearchNote from './SearchNote';
@@ -22,7 +22,6 @@ function Input({ noteTitle, noteContent, noteAuthor, noteColor, noteSearch,
 
   const handleShowAdd = () => {
     // If we're opening the show Add, we probably want to make sure other stuff is closed
-    console.log('clicked');
     if (!showAdd) {
       setShowSearch(false);
     }
