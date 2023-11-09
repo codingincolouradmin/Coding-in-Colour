@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { IoIosMore, IoIosSearch } from "react-icons/io";
 import { HiSortDescending } from "react-icons/hi";
+import AddNote from './AddNote';
 
 function Input({ noteTitle, noteContent, noteAuthor, noteColor, noteSearch,
   updateTitle, updateContent, updateAuthor, updateColor, updateSearch,
   addNote,
   sorted, handleSort }) {
-  const [show, setShow] = useState(false);
-  const [showAdd, setShowAdd] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
+  const [show, setShow] = useState(false);                // Show or hide the add/search/sort
+  const [showAdd, setShowAdd] = useState(false);          // Show or hide the add
+  const [showSearch, setShowSearch] = useState(false);    // Show or hide the add
 
   // Handlers for showing adding note, searching note
   const handleShow = () => {
@@ -16,11 +17,11 @@ function Input({ noteTitle, noteContent, noteAuthor, noteColor, noteSearch,
     setShow(!show);
     setShowAdd(false);
     setShowSearch(false);
-    console.log('we are clicking!');
   }
 
   const handleShowAdd = () => {
     // If we're opening the show Add, we probably want to make sure other stuff is closed
+    console.log('clicked');
     if (!showAdd) {
       setShowSearch(false);
     }
@@ -35,33 +36,23 @@ function Input({ noteTitle, noteContent, noteAuthor, noteColor, noteSearch,
     setShowSearch(!showSearch);
   }
 
+  const addNoteProps = {
+    noteTitle, noteContent, noteAuthor, noteColor,
+    updateTitle, updateContent, updateAuthor, updateColor,
+    addNote,
+    showAdd, handleShowAdd
+  }
+
   return (
-    <div className='noteInput'>
+    <div className='Input'>
       <IoIosMore className="add-circle" onClick={handleShow}/>
-      {show && 
-        <div className="hiddenDiv">
-          <HiSortDescending className="add-circle2" onClick={handleSort}/>
-        </div>
+      {show &&
+          <div className="hiddenDiv">
+             <AddNote {...addNoteProps} />
+             <HiSortDescending className="add-circle2" onClick={handleSort} />
+          </div>
       }
     </div>
-    // <div className="noteInput">
-    //   <input value={noteTitle} onChange={updateTitle} placeholder="Title"/>
-    //   <br />
-    //   <input value={noteContent} onChange={updateContent} placeholder="Note"/>
-    //   <br />
-    //   <input value={noteAuthor} onChange={updateAuthor} placeholder="Author" />
-    //   <br />
-    //   <select value={noteColor} onChange={updateColor}>
-    //     <option value="">select color</option>
-    //     <option value="brown-sugar">brown</option>
-    //     <option value="atomic-tangerine">tangerine</option>
-    //     <option value="cadet-gray">grey</option>
-    //     <option value="phlox">purple</option>
-    //     <option value="tea-green">green</option>
-    //   </select>
-    //   <br />
-    //   <button onClick={addNote}>Save</button>
-    // </div>
   );
 }
 
