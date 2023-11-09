@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { IoIosMore, IoIosSearch } from "react-icons/io";
 import { HiSortDescending } from "react-icons/hi";
 import AddNote from './AddNote';
+import SearchNote from './SearchNote';
 
 function Input({ noteTitle, noteContent, noteAuthor, noteColor, noteSearch,
   updateTitle, updateContent, updateAuthor, updateColor, updateSearch,
   addNote,
-  sorted, handleSort }) {
+  handleSort }) {
   const [show, setShow] = useState(false);                // Show or hide the add/search/sort
   const [showAdd, setShowAdd] = useState(false);          // Show or hide the add
   const [showSearch, setShowSearch] = useState(false);    // Show or hide the add
@@ -43,12 +44,17 @@ function Input({ noteTitle, noteContent, noteAuthor, noteColor, noteSearch,
     showAdd, handleShowAdd
   }
 
+  const searchNoteProps = {
+    noteSearch, updateSearch, showSearch, handleShowSearch
+  }
+
   return (
     <div className='Input'>
       <IoIosMore className="add-circle" onClick={handleShow}/>
       {show &&
           <div className="hiddenDiv">
              <AddNote {...addNoteProps} />
+             <SearchNote {...searchNoteProps} />
              <HiSortDescending className="add-circle2" onClick={handleSort} />
           </div>
       }
