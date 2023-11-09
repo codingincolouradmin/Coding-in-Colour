@@ -49,7 +49,7 @@ function Input({ noteTitle, noteContent, noteAuthor, noteColor, noteSearch,
 
   return (
     <div className='Input'>
-      <IoIosMore className="add-circle" onClick={handleShow}/>
+      <IoIosMore className="add-circle3" onClick={handleShow}/>
       {show &&
           <div className="hiddenDiv">
              <AddNote {...addNoteProps} />
