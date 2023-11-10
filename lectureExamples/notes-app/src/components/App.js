@@ -6,11 +6,14 @@ import UserProfile from "./User";
 
 import { v4 as uuidv4 } from "uuid";
 import Axios from "axios";
+const config = require('../config.json'); // My API key is stored inside of here
+
 // get-> getting info
 //post-> add info
 //put-> change info in an id
 //delete-> delete an object
-const url = "https://6541c4b9f0b8287df1fed384.mockapi.io/notesapp";
+
+const url = `https://${config.API_KEY}.mockapi.io/notesapp`;
 
 function App() {
   // all notes state
