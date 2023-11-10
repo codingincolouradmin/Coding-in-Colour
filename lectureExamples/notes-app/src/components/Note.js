@@ -2,8 +2,6 @@ import heartIcon from "../assets/images/icheart2.png";
 import deleteIcon from "../assets/images/cross.png"
 
 function Note({ note, updateCount, deleteNote }) {
-  console.log(deleteNote);
-  console.log(updateCount);
   return (
     <div className="note" style={{ backgroundColor: `var(--${note.color})` }}>
       <div className="card-header">

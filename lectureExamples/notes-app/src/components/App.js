@@ -14,24 +14,7 @@ const url = "https://6541c4b9f0b8287df1fed384.mockapi.io/notesapp";
 
 function App() {
   // all notes state
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      content: "Whats up",
-      color: "brown-sugar",
-      heartCount: 0,
-      title: "first",
-      author: "James Bond",
-    },
-    {
-      id: 2,
-      content: "How are you",
-      color: "phlox",
-      heartCount: 0,
-      title: "second",
-      author: "Ronaldo",
-    },
-  ]);
+  const [notes, setNotes] = useState([]);
 
   // get all data from the API
   function getAll() {

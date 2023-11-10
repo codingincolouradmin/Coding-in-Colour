@@ -10,10 +10,7 @@ function Notes({ notes, updateCount, search, sorted, deleteNote }) {
     }
   }
 
-  // console.log(deleteNote);
-  // console.log(updateCount);
   return (
-    
     <div className="notes">
       {sorted ? 
         notes.filter((note) => searchFilter(search, note))
