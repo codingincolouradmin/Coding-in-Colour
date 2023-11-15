@@ -4,10 +4,9 @@ import Chat from "./Chat";
 import { useState } from "react";
 
 function App() {
-  console.log('rendered...');
   // Keeps track of our chat history
   const [chat, setChat] = useState(
-    "Hello, my name is John, What is your name?"
+    ["Hello, my name is John. What's yours?"]
   );
 
   // Keeps track of our message (what the user is typing in)
@@ -15,13 +14,16 @@ function App() {
   
   // Handles changing our message when user types 
   function handleMessageChange(e) {
+    e.preventDefault(); // prevent default action
     const newValue = e.target.value;
     setMessage(newValue);
   }
 
   // Handles updating our chat when user clicks button
   function handleAskClick(e) {
-    setChat(message);
+    e.preventDefault(); // prevent default action
+    const newChat = [...chat, message]
+    setChat(newChat);
     setMessage('');
   }
 
