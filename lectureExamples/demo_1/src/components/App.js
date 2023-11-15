@@ -4,33 +4,37 @@ import Chat from "./Chat";
 import { useState } from "react";
 
 function App() {
-  const [messages, setMessages] = useState(
+  // Keeps track of our chat history
+  const [chat, setChat] = useState(
     "Hello, my name is John, What is your name?"
   );
 
-  // capture input values
-  const [textInputTemp, setTextInput] = useState("");
-  function updateInputText(e) {
-    const newValue = e.target.value;
-    setTextInput(newValue);
+  // Keeps track of our message (what the user is typing in)
+  const [message, setMessage] = useState("");
+  
+  // Handles changing our message when user types 
+  function handleMessageChange(e) {
+    console.log('I have been changed');
   }
 
-  // button click
-  function handleAsk(e) {
-    // any operations
-    setMessages(textInputTemp);
+  // Handles updating our chat when user clicks button
+  function handleAskClick(e) {
+    console.log('I have been clicked');
   }
 
   return (
     <div className="App">
-      <Chat chat1={messages} />
+      <Chat chat1={chat} />
       <Form
-        textInputValue={textInputTemp}
-        triggerInputChange={updateInputText}
-        triggerAskButton={handleAsk}
+        message={message}
+        onMessageChange={handleMessageChange}
+        onAskClick={handleAskClick}
       />
     </div>
   );
 }
+
+// function Form(textInputValue, x, triggerAskButton)
+// Form(textInputTemp, foo, handleAsk)
 
 export default App;

@@ -1,8 +1,8 @@
-function Form({ textInputValue, triggerAskButton, triggerInputChange }) {
+function Form({ message, onMessageChange, onAskClick }) {
   return (
     <>
-      <input value={textInputValue} onChange={triggerInputChange} />
-      <button onClick={triggerAskButton}>Ask</button>
+      <input value={message} onChange={onMessageChange} />
+      <button onClick={onAskClick}>Ask</button>
     </>
   );
 }
