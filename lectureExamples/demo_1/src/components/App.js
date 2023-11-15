@@ -1,6 +1,6 @@
 import "../styles/App.css";
-import Form from "./form";
-import Chat from "./chat";
+import Form from "./Form";
+import Chat from "./Chat";
 import { useState } from "react";
 
 function App() {

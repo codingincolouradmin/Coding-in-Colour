@@ -1,4 +1,4 @@
-import Message from "./message";
+import Message from "./Message";
 
 function Chat({ chat1 }) {
   return (
