@@ -4,6 +4,7 @@ import Chat from "./Chat";
 import { useState } from "react";
 
 function App() {
+  console.log('rendered...');
   // Keeps track of our chat history
   const [chat, setChat] = useState(
     "Hello, my name is John, What is your name?"
@@ -14,17 +15,19 @@ function App() {
   
   // Handles changing our message when user types 
   function handleMessageChange(e) {
-    console.log('I have been changed');
+    const newValue = e.target.value;
+    setMessage(newValue);
   }
 
   // Handles updating our chat when user clicks button
   function handleAskClick(e) {
-    console.log('I have been clicked');
+    setChat(message);
+    setMessage('');
   }
 
   return (
     <div className="App">
-      <Chat chat1={chat} />
+      <Chat chat={chat} />
       <Form
         message={message}
         onMessageChange={handleMessageChange}
