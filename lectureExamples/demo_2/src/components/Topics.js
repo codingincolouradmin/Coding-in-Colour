@@ -1,22 +1,40 @@
-function TopicButton(props) {
-  return (
-    <>
-      <button>{props.name}</button>
-    </>
-  );
-}
+// function TopicButton(props) {
+//   return (
+//     <>
+//       <button>{props.name}</button>
+//     </>
+//   );
+// }
 
-export default function Topics() {
+function Topics(props) {
+  const description = [
+    "Amzing tool for Web Dev",
+    "Great language to integrate with html",
+    "Tag based language",
+    "Great for designing",
+    "Great for managing states of complex applications",
+    "Great for visualisation"
+  ]
+  const {onbtnclick}=props;
+  const handleClick = (value) => {
+    onbtnclick(value);
+  }
+ 
+  
+
   return (
     <>
-      <TopicButton name={"React"} />
-      <TopicButton name={"JS"} />
-      <br />
-      <TopicButton name={"HTML"} />
-      <TopicButton name={"CSS"} />
-      <br />
-      <TopicButton name={"Redux"} />
-      <TopicButton name={"Trees"} />
+      <div className="allButtons">
+        <button onClick={()=> handleClick(description[0])}>React</button>
+        <button onClick={()=> handleClick(description[1])}>JS</button>
+        <br />
+        <button onClick={()=> handleClick(description[2])}>HTML</button>
+        <button onClick={()=> handleClick(description[3])}>CSS</button>
+        <br />
+        <button onClick={()=> handleClick(description[4])}>Redux</button>
+        <button onClick={()=> handleClick(description[5])}>Trees</button>
+      </div>
     </>
   );
 }
+export default Topics;
