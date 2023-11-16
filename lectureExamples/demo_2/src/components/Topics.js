@@ -1,38 +1,42 @@
-// function TopicButton(props) {
-//   return (
-//     <>
-//       <button>{props.name}</button>
-//     </>
-//   );
-// }
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function Topics(props) {
-  const description = [
-    "Amzing tool for Web Dev",
-    "Great language to integrate with html",
-    "Tag based language",
-    "Great for designing",
-    "Great for managing states of complex applications",
-    "Great for visualisation"
-  ]
-  const {onbtnclick}=props;
+  const url = "https://65416188f0b8287df1fe4c19.mockapi.io/description";
+
+  const [dataDesc, setDataDesc] = useState();
+  const { onbtnclick } = props;
   const handleClick = (value) => {
     onbtnclick(value);
-  }
- 
-  
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await axios
+        .get(url)
+        .then((response) => {
+          // this is executed if reposne is recieved
+          setDataDesc(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
       <div className="allButtons">
-        <button onClick={()=> handleClick(description[0])}>React</button>
-        <button onClick={()=> handleClick(description[1])}>JS</button>
+        <button onClick={() => handleClick(dataDesc[0].content)}>React</button>
+        <button onClick={() => handleClick(dataDesc[1].content)}>JS</button>
         <br />
-        <button onClick={()=> handleClick(description[2])}>HTML</button>
-        <button onClick={()=> handleClick(description[3])}>CSS</button>
+        <button onClick={() => handleClick(dataDesc[2].content)}>HTML</button>
+        <button onClick={() => handleClick(dataDesc[3].content)}>CSS</button>
         <br />
-        <button onClick={()=> handleClick(description[4])}>Redux</button>
-        <button onClick={()=> handleClick(description[5])}>Trees</button>
+        <button onClick={() => handleClick(dataDesc[4].content)}>Redux</button>
+        <button onClick={() => handleClick(dataDesc[5].content)}>Trees</button>
       </div>
     </>
   );
