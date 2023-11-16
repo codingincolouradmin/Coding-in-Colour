@@ -1,7 +1,7 @@
 function Vertical() {
   return (
     <>
-      <div style={{ height: 150, backgroundColor: "green" }}>test</div>
+      <div className="vert">test</div>
     </>
   );
 }

@@ -4,10 +4,12 @@ import Vertical from "./Vertical";
 
 function App() {
   return (
-    <div clsassName="App">
-      <Course />
-      <Vertical />
-    </div>
+    //<div className="container">
+      <div className="App">
+        <Course />
+        <Vertical />
+      </div>
+    //</div>
   );
 }
 
