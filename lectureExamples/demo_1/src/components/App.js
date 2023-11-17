@@ -1,6 +1,6 @@
 import "../styles/App.css";
-import Form from "./Form";
-import Chat from "./Chat";
+import Form from "./form";
+import Chat from "./chat";
 import { useState, useEffect } from "react";
 import messageService from "../services/messageService";
 
