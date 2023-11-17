@@ -1,9 +1,9 @@
 function Message({ message, onDeleteClick }) {
   return (
-    <>
-      <p>{ message.content }</p>
+    <div>
+      { message.content }
       <button onClick={(e) => onDeleteClick(e, message.id)}>delete</button>
-    </>
+    </div>
   )
 }
 
