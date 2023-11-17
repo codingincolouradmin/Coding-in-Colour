@@ -32,8 +32,8 @@ function App() {
       <Chat chat={chat} />
       <Form
         message={message}
-        onMessageChange={handleMessageChange}
-        onAskClick={handleAskClick}
+        onFormChange={handleMessageChange}
+        onFormClick={handleAskClick}
       />
     </div>
   );

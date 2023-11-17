@@ -1,8 +1,8 @@
-function Form({ message, onMessageChange, onAskClick }) {
+function Form({ message, onFormChange, onFormClick }) {
   return (
     <>
-      <input value={message} onChange={onMessageChange} />
-      <button onClick={onAskClick}>Ask</button>
+      <input value={message} onChange={onFormChange} />
+      <button onClick={onFormClick}>Ask</button>
     </>
   );
 }
