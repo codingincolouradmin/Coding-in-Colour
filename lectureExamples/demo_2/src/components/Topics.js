@@ -6,21 +6,21 @@
 //   );
 // }
 
-function Topics(props) {
+function Topics({onTopicClick}) {
   const description = [
-    "Amzing tool for Web Dev",
+    "Amazing tool for Web Dev",
     "Great language to integrate with html",
     "Tag based language",
     "Great for designing",
     "Great for managing states of complex applications",
     "Great for visualisation"
   ]
-  const {onbtnclick}=props;
+
+  // const {onbtnclick}=props;
+
   const handleClick = (value) => {
-    onbtnclick(value);
+    onTopicClick(value);
   }
- 
-  
 
   return (
     <>
@@ -28,7 +28,7 @@ function Topics(props) {
         <button onClick={()=> handleClick(description[0])}>React</button>
         <button onClick={()=> handleClick(description[1])}>JS</button>
         <br />
-        <button onClick={()=> handleClick(description[2])}>HTML</button>
+        <button onClick={handleClick(description[2])}>HTML</button>
         <button onClick={()=> handleClick(description[3])}>CSS</button>
         <br />
         <button onClick={()=> handleClick(description[4])}>Redux</button>

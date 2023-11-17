@@ -1,9 +1,10 @@
-function Message({ content }) {
+function Message({ message, onDeleteClick }) {
   return (
-    <>
-      <p>{content}</p>
-    </>
-  );
+    <div>
+      { message.content }
+      <button onClick={(e) => onDeleteClick(e, message.id)}>delete</button>
+    </div>
+  )
 }
 
 export default Message;

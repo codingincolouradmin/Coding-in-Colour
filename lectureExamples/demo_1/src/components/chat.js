@@ -1,11 +1,11 @@
 import Message from "./Message";
 
-function Chat({ chat }) {
+function Chat({ chat, onDeleteClick }) {
   return (
     <>
       {
-        chat.map((element) => {
-          return <Message content={element}/>
+        chat.map((message) => {
+          return <Message key={message.id} message={message} onDeleteClick={onDeleteClick}/>
         })
       }
     </>
