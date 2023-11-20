@@ -2,7 +2,7 @@ import "../styles/App.css";
 import Form from "./form";
 import Chat from "./chat";
 import { useState, useEffect } from "react";
-const API_KEY = "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";
+const API_KEY = "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";
 
 
 
