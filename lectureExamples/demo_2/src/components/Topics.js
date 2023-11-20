@@ -28,7 +28,7 @@ function Topics({onTopicClick}) {
         <button onClick={()=> handleClick(description[0])}>React</button>
         <button onClick={()=> handleClick(description[1])}>JS</button>
         <br />
-        <button onClick={handleClick(description[2])}>HTML</button>
+        <button onClick={() => handleClick(description[2])}>HTML</button>
         <button onClick={()=> handleClick(description[3])}>CSS</button>
         <br />
         <button onClick={()=> handleClick(description[4])}>Redux</button>
