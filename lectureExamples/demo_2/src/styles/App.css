@@ -1,25 +1,64 @@
 .App{
   display: grid;
   grid-template-columns: 50% 50%;
-  background-color: brown;
+  background-color: white;
   height: 100vh;
 }
 .vert{
   height: 100%;
-  background-color: green;
+  background-color: #00FFFF;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 .courseContainer{
   display: grid;
   grid-template-rows: 60% 40%;
 }
 .explain{
-  background-color: greenyellow;
+  background-color: #FFE5B4;
+  padding:50px;
+  color: white;
+  font-size: 30px;
+  
 }
 .allButtons button{
   height: 100px;
   width: 300px;
-  background-color: bisque;
+  background-color: #FFE5B4;
+  border: none;
+  margin:2px;
+  border-radius: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
 }
 .topics{
   padding: 50px;
+}
+.form{
+  position: fixed;
+  bottom:30px;
+  
+}
+.innerDiv{
+  width:100vh;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+.innerDiv input{
+  margin-left: 50px;
+  
+  padding:20px;
+  border-radius: 50px;
+}
+.innerDiv button{
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 20px;
+  border:none;
+  border-radius: 50px;
+  background-color:orange;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
 }
