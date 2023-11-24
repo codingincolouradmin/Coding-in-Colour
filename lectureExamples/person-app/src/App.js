@@ -21,8 +21,6 @@ export default function App() {
     location: ''
   })
 
-  // console.log(people);
-
   const handleTyping = (e) => {
     e.preventDefault()
     // Create a copy of the 'person' to keep track of what the user is typing
