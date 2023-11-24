@@ -1,5 +1,8 @@
 *::before, *::after, * {
-  background-color: #fff3cd;
   margin: 0px auto;
   box-sizing: border-box;
+}
+
+html {
+  background-color: #fff3cd;
 }
