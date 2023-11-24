@@ -16,18 +16,26 @@ function PunsPlease() {
     message: '',
   });
 
+  const syncPuns = () => {
+    punServices.getPuns().then(puns => setPuns(puns))
+  }
+
   useEffect(() => {
-    punServices.getPuns().then((puns) => setPuns(puns))
+    syncPuns();
   }, [])
 
   const handleDeletePun = (e, id) => {
-    // TODO
-    console.log('Clicked delete on ', id);
+    e.preventDefault();
+    punServices.deletePun(id).then(() => {
+      syncPuns();
+    })
   }
 
-  const handleLikePun = (e, id) => {
-    // TODO
-    console.log('Clicked like on ', id);
+  const handleLikePun = (e, pun) => {
+    e.preventDefault();
+    punServices.likePun(pun).then(() => {
+      syncPuns();
+    })
   }
 
   return (

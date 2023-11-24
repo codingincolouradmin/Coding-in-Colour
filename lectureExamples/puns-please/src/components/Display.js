@@ -12,7 +12,7 @@ function Display({ puns, onDeletePun, onLikePun }) {
   return (
     <div className="puns-display" style={display}>
       {puns.map((pun) => {
-        return <Pun pun={pun} onDeletePun={onDeletePun} onLikePun={onLikePun}/>
+        return <Pun key={pun.id} pun={pun} onDeletePun={onDeletePun} onLikePun={onLikePun}/>
       })}
     </div>
   );

@@ -23,7 +23,7 @@ function Pun({ pun, onDeletePun, onLikePun }) {
       <span>Likes: <strong>{pun.likes}</strong></span>
       <div className="pun-buttons" style={punButtons}>
         <button onClick={(e) => onDeletePun(e, pun.id)}>Delete</button>
-        <button onClick={(e) => onLikePun(e, pun.id)}>Like</button>
+        <button onClick={(e) => onLikePun(e, pun)}>Like</button>
       </div>
     </div>
   );
