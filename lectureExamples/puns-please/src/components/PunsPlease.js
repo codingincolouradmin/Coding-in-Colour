@@ -1,4 +1,5 @@
 import Display from "./Display";
+import Feedback from "./Feedback";
 import { useState, useEffect } from 'react';
 import punServices from "../services/punServices";
 
@@ -38,11 +39,27 @@ function PunsPlease() {
     })
   }
 
+  const handleFeedbackChange = (e) => {
+    const newFeedback = {
+      ...feedback,
+      [e.target.name]: e.target.value
+    }
+    setFeedback(newFeedback);
+  }
+
+  const handleFeedbackClick = (e) => {
+    setFeedback({
+      name: '',
+      message: ''
+    })
+  }
+
   return (
     <div className="App">
       Hello, Students ^_^
       <h1>Puns Please App</h1>
       <Display puns={puns} onDeletePun={handleDeletePun} onLikePun={handleLikePun} />
+      <Feedback feedback={feedback} onFeedbackChange={handleFeedbackChange} onFeedbackClick={handleFeedbackClick}/>
     </div>
   );
 }
