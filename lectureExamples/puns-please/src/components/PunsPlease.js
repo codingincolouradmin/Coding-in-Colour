@@ -15,6 +15,18 @@ function PunsPlease() {
     message: '',
   });
 
+  useEffect(() => {
+    console.log('hello');
+  }, [])
+
+  const handleDeletePun = (e, id) => {
+    // TODO
+  }
+
+  const handleLikePun = (e, id) => {
+    // TODO
+  }
+
   return (
     <div className="App">
       Hello, Students ^_^
