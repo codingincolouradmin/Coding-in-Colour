@@ -2,6 +2,7 @@ import Display from "./Display";
 import Feedback from "./Feedback";
 import { useState, useEffect } from 'react';
 import punServices from "../services/punServices";
+import feedbackServices from "../services/feedbackServices";
 
 function PunsPlease() {
   const [puns, setPuns] = useState([]); // Keeps track of all our puns
@@ -48,9 +49,11 @@ function PunsPlease() {
   }
 
   const handleFeedbackClick = (e) => {
-    setFeedback({
-      name: '',
-      message: ''
+    feedbackServices.sendFeedback(feedback).then(() => {
+      setFeedback({
+        name: '',
+        message: ''
+      })
     })
   }
 
