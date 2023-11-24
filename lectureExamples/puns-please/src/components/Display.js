@@ -1,13 +1,20 @@
 import Pun from "./Pun";
 
 function Display({ puns, onDeletePun, onLikePun }) {
-    return (
-      <div className="puns-display">
-        {puns.map((pun) => {
-          return <Pun pun={pun} onDeletePun={onDeletePun} onLikePun={onLikePun}/>
-        })}
-      </div>
-    );
+
+  const display = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    padding: '20px',
   }
+
+  return (
+    <div className="puns-display" style={display}>
+      {puns.map((pun) => {
+        return <Pun pun={pun} onDeletePun={onDeletePun} onLikePun={onLikePun}/>
+      })}
+    </div>
+  );
+}
   
 export default Display;

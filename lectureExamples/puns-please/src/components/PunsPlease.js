@@ -40,7 +40,7 @@ function PunsPlease() {
   return (
     <div className="App">
       Hello, Students ^_^
-      <h2>Puns Please App</h2>
+      <h1>Puns Please App</h1>
       <Display puns={puns} onDeletePun={handleDeletePun} onLikePun={handleLikePun} />
     </div>
   );
