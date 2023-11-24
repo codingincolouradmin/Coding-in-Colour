@@ -1,63 +1,66 @@
-.App{
+.App {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 50%;
   background-color: white;
   height: 100vh;
 }
-.vert{
+.vert {
   height: 100%;
-  background-color: #00FFFF;
+  background-color: #00ffff;
   overflow: hidden;
   overflow-y: scroll;
 }
-.courseContainer{
+.courseContainer {
   display: grid;
   grid-template-rows: 60% 40%;
 }
-.explain{
-  background-color: #FFE5B4;
-  padding:50px;
+.explain {
+  background-color: #ffe5b4;
+  padding: 50px;
   color: white;
   font-size: 30px;
-  
 }
-.allButtons button{
+.allButtons button {
   height: 100px;
   width: 300px;
-  background-color: #FFE5B4;
+  background-color: #ffe5b4;
   border: none;
-  margin:2px;
+  margin: 2px;
   border-radius: 50px;
   font-size: 30px;
   font-weight: bold;
   color: white;
 }
-.topics{
+
+#chatBtn {
+  width: 50px;
+  height: 50px;
+}
+.topics {
   padding: 50px;
 }
-.form{
+.form {
   position: fixed;
-  bottom:30px;
-  
+  bottom: 30px;
 }
-.innerDiv{
-  width:100vh;
+.innerDiv {
+  width: 100vh;
   display: grid;
   grid-template-columns: 60% 40%;
 }
-.innerDiv input{
+.innerDiv input {
   margin-left: 50px;
-  
-  padding:20px;
+
+  padding: 20px;
   border-radius: 50px;
 }
-.innerDiv button{
+.innerDiv button {
   margin-left: 50px;
   margin-right: 50px;
   padding: 20px;
-  border:none;
+  border: none;
   border-radius: 50px;
-  background-color:orange;
+  background-color: orange;
   color: white;
   font-weight: bold;
   font-size: 15px;
