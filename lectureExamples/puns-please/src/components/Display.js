@@ -6,6 +6,7 @@ function Display({ puns, onDeletePun, onLikePun }) {
     display: 'flex',
     flexWrap: 'wrap',
     padding: '20px',
+    gap: '20px',
   }
 
   return (

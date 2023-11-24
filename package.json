@@ -9,6 +9,7 @@
   "author": "Coding in Colour",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.2",
     "prompt-sync": "^4.2.0"
   }
 }

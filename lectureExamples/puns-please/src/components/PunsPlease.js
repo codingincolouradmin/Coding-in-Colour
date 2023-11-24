@@ -1,16 +1,9 @@
 import Display from "./Display";
 import { useState, useEffect } from 'react';
+import punServices from "../services/punServices";
 
 function PunsPlease() {
-  const [puns, setPuns] = useState([
-    {
-      id: "1",
-      pun: "What did the bread say to the baker? You knead me.",
-      author: "anonymous",
-      likes: 10
-   }
-   
-  ]); // Keeps track of all our puns
+  const [puns, setPuns] = useState([]); // Keeps track of all our puns
   // keep track of what the user is typing into the pun inputs
   const [pun, setPun] = useState({
     pun: '',
@@ -24,7 +17,7 @@ function PunsPlease() {
   });
 
   useEffect(() => {
-    console.log('hello');
+    punServices.getPuns().then((puns) => setPuns(puns))
   }, [])
 
   const handleDeletePun = (e, id) => {

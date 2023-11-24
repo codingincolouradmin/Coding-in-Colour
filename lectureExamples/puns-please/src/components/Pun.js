@@ -7,7 +7,6 @@ function Pun({ pun, onDeletePun, onLikePun }) {
     display: 'flex',
     flexDirection: 'column',
     gap: '5px',
-    overflow: 'scroll',
     border: '1px solid black',
     padding: '10px'
   }
@@ -20,8 +19,8 @@ function Pun({ pun, onDeletePun, onLikePun }) {
   return (
     <div className="pun-display" style={punCard}>
       <span><strong>{pun.author}</strong></span>
-      <span>{pun.pun}</span>
-      <span>Likes: {pun.likes}</span>
+      <span style={{overflow: 'scroll'}}>{pun.pun}</span>
+      <span>Likes: <strong>{pun.likes}</strong></span>
       <div className="pun-buttons" style={punButtons}>
         <button onClick={(e) => onDeletePun(e, pun.id)}>Delete</button>
         <button onClick={(e) => onLikePun(e, pun.id)}>Like</button>
