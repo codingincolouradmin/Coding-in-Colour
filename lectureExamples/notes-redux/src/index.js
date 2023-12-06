@@ -27,6 +27,7 @@ const noteReducer = (state = initialNotes, action) => {
     case 'SET_IMPORTANCE':
       const importantId = action.payload.id;
       return state.map((note) => {
+        console.log(`current note id: ${note.id}, id we want to change: ${importantId}`)
         return (note.id == importantId ? {...note, important: !note.important} : note)
       });
     default: 
@@ -42,7 +43,7 @@ function App() {
   const handleClickSubmit = (e) => {
     e.preventDefault();
     const note = e.target.note.value;
-    console.log('content is', note);
+    e.target.note.value = '';
     store.dispatch({
       type: 'CREATE',
       payload: { note }
