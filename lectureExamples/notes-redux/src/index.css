@@ -1,6 +1,4 @@
 *::before, *, *::after {
-  margin: 0px auto;
-  padding: 0;
   box-sizing: border-box;
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
