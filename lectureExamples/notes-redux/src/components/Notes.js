@@ -1,10 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleImportanceOf } from '../reducers/noteActions';
 
-
-const Notes = () => {
+const Note = ({note}) => {
     const dispatch = useDispatch();
-    const notes = useSelector(state => { return state }); // gives component access to redux state
 
     const handleClickImportant = (e, id) => {
         e.preventDefault();
@@ -13,17 +11,26 @@ const Notes = () => {
     }
 
     return (
+        <li>
+            {note.content} 
+            <strong>{note.important ? 'important' : ''}</strong>
+            <button onClick={(e) => handleClickImportant(e, note.id)}>
+                {note.important ? 'Unimportant' : 'important'}
+            </button>
+        </li>
+    )
+
+}
+
+const Notes = () => {
+    const notes = useSelector(state => { return state }); // gives component access to redux state
+
+    return (
     <>
         <h2>Notes</h2>
         <ul>
             {notes.map((note) => {
-                return (
-                    <li key={note.id}>
-                        {note.content} 
-                        <strong>{note.important ? 'important' : ''}</strong>
-                        <button onClick={(e) => handleClickImportant(e, note.id)}>{note.important ? 'Unimportant' : 'important'}</button>
-                    </li>
-                )
+                return <Note key={note.id} note={note}/>
             })}
         </ul>
     </>
