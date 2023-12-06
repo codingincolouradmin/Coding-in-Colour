@@ -2,17 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
+import { Provider, useDispatch } from 'react-redux';
 import noteReducer from './reducers/noteReducer';
+import { filterChange } from './reducers/filterActions';
+import filterReducer from './reducers/filterReducer';
 import NewNote from './components/NewNote';
 import Notes from './components/Notes';
 // Reference: Fullstackopen
 
 function App() {
+  const dispatch = useDispatch();
 
   const handleClickedButton = (e) => {
-    console.log('clicked ', e.target.value);
+    const radioSelection = e.target.value;
+    dispatch(filterChange(radioSelection));
   }
 
   return (
@@ -28,8 +32,13 @@ function App() {
   );
 }
 
+// create a new reducer for our store
+const reducer = combineReducers({
+  notes: noteReducer,
+  filter: filterReducer
+})
 // initialize store
-const store = createStore(noteReducer)
+const store = createStore(reducer)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -23,7 +23,10 @@ const Note = ({note}) => {
 }
 
 const Notes = () => {
-    const notes = useSelector(state => { return state }); // gives component access to redux state
+    const notes = useSelector(state => {
+        console.log('our state is ', state);
+        return state.notes 
+    }); // gives component access to redux state
 
     return (
     <>
