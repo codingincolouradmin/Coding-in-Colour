@@ -12,10 +12,12 @@ const NewNote = () => {
     }
 
     return (
-    <form onSubmit={handleClickSubmit}>
-        <input name="note" />
-        <button type="submit">submit</button>
-    </form>
+        <>
+        <h3>Add Note</h3>
+        <form onSubmit={handleClickSubmit}>
+            <input name="note" />
+            <button type="submit">submit</button>
+        </form></>
     )
 }
 

@@ -3,38 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import { createStore } from 'redux';
-import { Provider, useDispatch, useSelector } from 'react-redux';
+import { Provider } from 'react-redux';
 import noteReducer from './reducers/noteReducer';
-import { toggleImportanceOf } from './reducers/noteActions';
 import NewNote from './components/NewNote';
+import Notes from './components/Notes';
 // Reference: Fullstackopen
 
 function App() {
-  const dispatch = useDispatch(); // gives the component the ability to dispatch
-  const notes = useSelector(state => { return state }); // gives component access to redux state
-
-
-  const handleClickImportant = (e, id) => {
-    e.preventDefault();
-    console.log('Changing importance of note with id: ', id);
-    dispatch(toggleImportanceOf(id))
-
-  }
-
   return (
     <div className="App">
-      <h2>Notes</h2>
-      <ul>
-        {notes.map((note) => {
-          return (
-            <li key={note.id}>
-              {note.content} <strong>{note.important ? 'important': ''}</strong>
-              <button onClick={(e) => handleClickImportant(e, note.id)}>{note.important ? 'Unimportant' : 'important'}</button>
-            </li>
-          )
-        })}
-      </ul>
-      <h3>Add Note</h3>
+      <Notes />
       <NewNote />
     </div>
   );
