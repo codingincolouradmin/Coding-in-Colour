@@ -23,16 +23,25 @@ const Note = ({note}) => {
 }
 
 const Notes = () => {
-    const notes = useSelector(state => {
-        console.log('our state is ', state);
-        return state.notes 
-    }); // gives component access to redux state
+    // gives component access to redux state
+    const filter = useSelector(state => state.filter)
+    const notes = useSelector(state => state.notes);
+
+    const handleFilter = (note) => {
+        if (filter == 'ALL') {
+            return note;
+        } else if (filter == 'IMPORTANT') {
+            return note.important
+        } else {
+            return !note.important
+        }
+    }
 
     return (
     <>
         <h2>Notes</h2>
         <ul>
-            {notes.map((note) => {
+            {notes.filter(handleFilter).map((note) => {
                 return <Note key={note.id} note={note}/>
             })}
         </ul>
