@@ -15,11 +15,20 @@ const initialNotes = [
 
 // reducer that handles updating our store's state
 const noteReducer = (state = initialNotes, action) => {
+  console.log(action);
   switch (action.type) {
     case 'CREATE':
-      return state;
-    case 'SET_IMPORTANT':
-      return state;
+      const newNote = action.payload.note
+      return state.concat({
+        id: state.length + 1,
+        content: newNote,
+        important: true
+      });
+    case 'SET_IMPORTANCE':
+      const importantId = action.payload.id;
+      return state.map((note) => {
+        return (note.id == importantId ? {...note, important: !note.important} : note)
+      });
     default: 
     return state;
   }
@@ -29,6 +38,26 @@ const noteReducer = (state = initialNotes, action) => {
 const store = createStore(noteReducer)
 
 function App() {
+
+  const handleClickSubmit = (e) => {
+    e.preventDefault();
+    const note = e.target.note.value;
+    console.log('content is', note);
+    store.dispatch({
+      type: 'CREATE',
+      payload: { note }
+    })
+  }
+
+  const handleClickImportant = (e, id) => {
+    e.preventDefault();
+    console.log('Changing importance of note with id: ', id);
+    store.dispatch({
+      type: 'SET_IMPORTANCE',
+      payload: { id }
+    })
+  }
+
   return (
     <div className="App">
       <h2>Notes</h2>
@@ -37,12 +66,13 @@ function App() {
           return (
             <li key={note.id}>
               {note.content} <strong>{note.important ? 'important': ''}</strong>
+              <button onClick={(e) => handleClickImportant(e, note.id)}>{note.important ? 'Unimportant' : 'important'}</button>
             </li>
           )
         })}
       </ul>
       <h3>Add Note</h3>
-      <form>
+      <form onSubmit={handleClickSubmit}>
         <input name="note" />
         <button type="submit">submit</button>
       </form>
