@@ -5,19 +5,14 @@ import './index.css';
 import { createStore } from 'redux';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import noteReducer from './reducers/noteReducer';
-import { createNote, toggleImportanceOf } from './reducers/noteActions';
+import { toggleImportanceOf } from './reducers/noteActions';
+import NewNote from './components/NewNote';
 // Reference: Fullstackopen
 
 function App() {
   const dispatch = useDispatch(); // gives the component the ability to dispatch
   const notes = useSelector(state => { return state }); // gives component access to redux state
 
-  const handleClickSubmit = (e) => {
-    e.preventDefault();
-    const note = e.target.note.value;
-    e.target.note.value = '';
-    dispatch(createNote(note))
-  }
 
   const handleClickImportant = (e, id) => {
     e.preventDefault();
@@ -40,10 +35,7 @@ function App() {
         })}
       </ul>
       <h3>Add Note</h3>
-      <form onSubmit={handleClickSubmit}>
-        <input name="note" />
-        <button type="submit">submit</button>
-      </form>
+      <NewNote />
     </div>
   );
 }
