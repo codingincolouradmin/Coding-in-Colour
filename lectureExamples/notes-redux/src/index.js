@@ -10,9 +10,19 @@ import Notes from './components/Notes';
 // Reference: Fullstackopen
 
 function App() {
+
+  const handleClickedButton = (e) => {
+    console.log('clicked ', e.target.value);
+  }
+
   return (
     <div className="App">
       <Notes />
+      <div>
+        all <input type="radio" name="filter" value="ALL" onChange={handleClickedButton}/>
+        important <input type="radio" name="filter" value="IMPORTANT" onChange={handleClickedButton} />
+        nonimportant <input type="radio" name="filter" value="NONIMPORTANT" onChange={handleClickedButton} />
+      </div>
       <NewNote />
     </div>
   );
