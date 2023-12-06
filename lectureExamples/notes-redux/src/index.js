@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import { createStore, combineReducers } from 'redux';
-import { Provider, useDispatch } from 'react-redux';
+import { Provider } from 'react-redux';
 import noteReducer from './reducers/noteReducer';
 import filterReducer from './reducers/filterReducer';
 import NewNote from './components/NewNote';
