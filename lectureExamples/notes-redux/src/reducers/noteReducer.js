@@ -4,20 +4,6 @@ const initialNotes = [
     { id: 3, content: 'Always eat your vegetables', important: true }
 ]
 
-const createNote = (note) => {
-    return {
-        type: 'CREATE',
-        payload: { note }
-    }
-}
-
-const toggleImportanceOf = (id) => {
-    return {
-        type: 'SET_IMPORTANCE',
-        payload: { id }
-    }
-}
-
 const noteReducer = (state = initialNotes, action) => {
     console.log(action);
     switch (action.type) {
@@ -38,6 +24,6 @@ const noteReducer = (state = initialNotes, action) => {
     }
 }
 
-export { createNote, toggleImportanceOf, noteReducer }
+export default noteReducer;
 
 

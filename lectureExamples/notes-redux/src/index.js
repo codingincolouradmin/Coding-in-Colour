@@ -4,7 +4,8 @@ import './index.css';
 
 import { createStore } from 'redux';
 import { Provider, useDispatch, useSelector } from 'react-redux';
-import { noteReducer, createNote, toggleImportanceOf } from './reducers/noteReducer';
+import noteReducer from './reducers/noteReducer';
+import { createNote, toggleImportanceOf } from './reducers/noteActions';
 // Reference: Fullstackopen
 
 function App() {
