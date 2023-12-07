@@ -18,7 +18,6 @@ const anecdoteSlice = createSlice({
             console.log(action);
             return state;
         }
-
     }
 })
 
