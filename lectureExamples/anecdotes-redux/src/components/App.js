@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import AnecdoteList from './AnecdoteList';
 import AnecdoteForm from './AnecdoteForm';
 import AnecdoteFilter from './AnecdoteFilter';

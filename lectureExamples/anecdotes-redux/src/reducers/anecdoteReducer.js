@@ -11,12 +11,18 @@ const anecdoteSlice = createSlice({
     initialState,
     reducers: {
         createAnecdote(state, action) {
-            console.log(action);
-            return state;
+            const content = action.payload.content;
+            return state.concat({
+                id: state.length + 1,
+                content,
+                votes: 0
+            })
         },
         updateVotes(state, action) {
-            console.log(action);
-            return state;
+            const voteId = action.payload.id;
+            return state.map((anecdote) => {
+                return (anecdote.id === voteId ? {...anecdote, votes: anecdote.votes + 1 } : anecdote)
+            })
         }
     }
 })
