@@ -1,20 +1,29 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateVotes } from '../reducers/anecdoteReducer';
 
-const Anecdote = ({anecdote, onVoteClick}) => {
+const Anecdote = ({anecdote}) => {
+    const dispatch = useDispatch();
+
+    const handleVoteClick = (e, id) => {
+        e.preventDefault();
+        dispatch(updateVotes({ id }))
+    }
+
     return (
         <li>
             {anecdote.content}
             <div>
                 <strong>votes: {anecdote.votes}</strong>
                 <br/>
-                <button onClick={(e) => onVoteClick(e, anecdote.id)}>vote</button>
+                <button onClick={(e) => handleVoteClick(e, anecdote.id)}>vote</button>
             </div>
         </li>
     )
 }
 
-const AnecdoteList = ({anecdotes, onVoteClick}) => {
+const AnecdoteList = () => {
     const filter = useSelector(state => { return state.filter }); // grab the filter from redux store
+    const anecdotes = useSelector(state => { return state.anecdotes }); // grab the anecdotes from the redux store
 
     // Simple styling for our anecdotes
     const anecdotesStyle = {
@@ -36,7 +45,7 @@ const AnecdoteList = ({anecdotes, onVoteClick}) => {
         <div>
             <ul style={anecdotesStyle}>
                 {anecdotes.filter(handleFilter).map((anecdote) => {
-                    return <Anecdote key={anecdote.id} anecdote={anecdote} onVoteClick={onVoteClick}/>
+                    return <Anecdote key={anecdote.id} anecdote={anecdote} />
                 })}
             </ul>
         </div>
