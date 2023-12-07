@@ -1,9 +1,10 @@
-const AnecdoteForm = () => {
+const AnecdoteForm = ({onFormSubmit}) => {
     return (
-        <div>
-
-        </div>
+        <form onSubmit={onFormSubmit}>
+            <input name="content"/>
+            <button type="submit">submit</button>
+        </form>
     )
 }
 
-export default AnecdoteForm;
+export default AnecdoteForm
