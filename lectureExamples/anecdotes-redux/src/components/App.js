@@ -29,10 +29,12 @@ function App() {
     setAnecdotes(anecdotes.concat(newAnecdote));
   }
 
-  //TODO: Implement voting
   const handleVoteClick = (e, id) => {
     e.preventDefault();
-    console.log('we clicked vote on anecdote with id of ', id);
+    const newAnecdotes = anecdotes.map((anecdote) => {
+      return (anecdote.id === id ? { ...anecdote, votes: anecdote.votes + 1 } : anecdote)
+    })
+    setAnecdotes(newAnecdotes);
   }
 
   return (
