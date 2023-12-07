@@ -10,19 +10,23 @@ function App() {
   ])
   const [filter, setFilter] = useState('');
 
-  //TODO: Implement change filter
   const handleFilterChange = (e) => {
     e.preventDefault();
     const typedVal = e.target.value;
     setFilter(typedVal);
   }
 
-  //TODO: Implement submitting the form
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const content = e.target.content.value;
     e.target.content.value = '';
-    console.log('we clicked submit with value of ', content);
+    // Create a new anecdote
+    const newAnecdote = {
+      id: anecdotes.length + 1,
+      content,
+      votes: 0
+    }
+    setAnecdotes(anecdotes.concat(newAnecdote));
   }
 
   //TODO: Implement voting
