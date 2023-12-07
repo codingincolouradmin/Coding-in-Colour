@@ -11,7 +11,7 @@ const Anecdote = ({anecdote, onVoteClick}) => {
     )
 }
 
-const AnecdoteList = ({anecdotes, onVoteClick}) => {
+const AnecdoteList = ({anecdotes, onVoteClick, filter}) => {
 
     // Simple styling for our anecdotes
     const anecdotesStyle = {
@@ -20,10 +20,19 @@ const AnecdoteList = ({anecdotes, onVoteClick}) => {
         gap: '5px'
     }
 
+    // Logic to decide if an anecdote should be filtered or not
+    const handleFilter = (anecdote) => {
+        if (filter.trim() == '') {
+            return true
+        } else {
+            return anecdote.content.includes(filter.trim());
+        }
+    }
+
     return (
         <div>
             <ul style={anecdotesStyle}>
-                {anecdotes.map((anecdote) => {
+                {anecdotes.filter(handleFilter).map((anecdote) => {
                     return <Anecdote key={anecdote.id} anecdote={anecdote} onVoteClick={onVoteClick}/>
                 })}
             </ul>

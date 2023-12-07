@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <h2>Anecdote App</h2>
       <AnecdoteFilter filter={filter} onFilterChange={handleFilterChange}/>
-      <AnecdoteList anecdotes={anecdotes} onVoteClick={handleVoteClick}/>
+      <AnecdoteList anecdotes={anecdotes} onVoteClick={handleVoteClick} filter={filter}/>
       <h3>Anecdote Form</h3>
       <AnecdoteForm onFormSubmit={handleFormSubmit}/>
     </div>
