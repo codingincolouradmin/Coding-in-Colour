@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 const Anecdote = ({anecdote, onVoteClick}) => {
     return (
         <li>
@@ -11,7 +13,8 @@ const Anecdote = ({anecdote, onVoteClick}) => {
     )
 }
 
-const AnecdoteList = ({anecdotes, onVoteClick, filter}) => {
+const AnecdoteList = ({anecdotes, onVoteClick}) => {
+    const filter = useSelector(state => { return state.filter }); // grab the filter from redux store
 
     // Simple styling for our anecdotes
     const anecdotesStyle = {
