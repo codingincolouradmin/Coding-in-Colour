@@ -5,8 +5,9 @@ import AnecdoteFilter from './AnecdoteFilter';
 
 function App() {
   const [anecdotes, setAnecdotes] = useState([
-    { id: 1, content: 'If it hurts, do it more often', votes: 0 },
-    { id: 2, content: 'Adding manpower to a late software project makes it later!', votes: 0 }
+    { id: 1, content: 'Software development: 1% coding, 99% figuring out why it is not working', votes: 0 },
+    { id: 2, content: 'Debugging is like being the detective in a crime movie where you are also the culprit', votes: 0 },
+    { id: 3, content: "Programming is the art of telling a computer what to do; it's also the art of explaining to yourself why it doesn't work", votes: 0 }
   ])
   const [filter, setFilter] = useState('');
 
