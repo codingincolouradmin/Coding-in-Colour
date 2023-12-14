@@ -19,7 +19,6 @@ function Books() {
   useEffect(() => {
     try {
       fetchData().then((response) => dispatch(setBooks(response)));
-      console.log("fetch data on each dispatch");
     } catch (error) {
       console.log(error);
     }
@@ -57,7 +56,7 @@ function Books() {
             <p>{book.title}</p>
             <p>AuthorName: </p>
             {book.authorId
-              ? authors.find((author) => author.id === book.authorId).name
+              ? authors.find((author) => author.id === book.authorId)?.name
               : "no author"}
             <button onClick={(e) => handleDelete(book.id)}>delete</button>
           </li>

@@ -17,7 +17,6 @@ function Authors() {
   useEffect(() => {
     try {
       fetchData().then((response) => dispatch(setAuthors(response)));
-      console.log("fetch data on each dispatch");
     } catch (error) {
       console.log(error);
     }

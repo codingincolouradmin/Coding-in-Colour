@@ -5,6 +5,7 @@ import Authors from "./components/Authors";
 import { useSelector, useDispatch } from "react-redux";
 import { selectBooks, assignAuthor } from "./features/booksSlice";
 import { selectAuthors } from "./features/authorsSlice";
+import { updateData } from "./services/bookService";
 
 function App() {
   const dispatch = useDispatch();
@@ -12,9 +13,17 @@ function App() {
   const books = useSelector(selectBooks);
   const authors = useSelector(selectAuthors);
 
-  const handleAssignAuthor = (bookId, authorId) => {
-    const payload = { bookId, authorId };
-    dispatch(assignAuthor(payload));
+  const handleAssignAuthor = async (bookId, authorId) => {
+    try {
+      const updatedItem = await updateData(bookId, authorId);
+      const bId = updatedItem.id;
+      const aId = updatedItem.authorId;
+      const payload = { bId, aId };
+      console.log(payload);
+      dispatch(assignAuthor(payload));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -23,7 +32,7 @@ function App() {
       <hr />
       <Authors />
       <hr />
-      <h3>Aissign author to book</h3>
+      <h3>Assign author to book</h3>
       {books.map((book) => (
         <div key={book.id}>
           <p>{book.title}</p>

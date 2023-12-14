@@ -17,10 +17,10 @@ const booksSlice = createSlice({
       state.books = state.books.filter((book) => book.id !== bookId);
     },
     assignAuthor: (state, action) => {
-      const { bookId, authorId } = action.payload;
-      const book = state.books.find((b) => b.id === bookId);
+      const { bId, aId } = action.payload;
+      const book = state.books.find((b) => b.id === bId);
       if (book) {
-        book.authorId = authorId;
+        book.authorId = aId;
       }
     },
   },
