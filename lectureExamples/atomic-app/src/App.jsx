@@ -1,4 +1,5 @@
 import Button from "./components/atoms/Button";
+import Label from "./components/atoms/Label";
 
 function App() {
   const onFormSubmit = (e) => {
@@ -10,7 +11,7 @@ function App() {
     <div>
       <h1>Form</h1>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="name">Name: </label><input id="name" name="name" required pattern="[A-Za-z ]+" />
+        <Label htmlFor="name" textContent={"Name :"}/><input id="name" name="name" required pattern="[A-Za-z ]+" />
         <label htmlFor="age">Age: </label><input id="age" name="age" type="number" min="1" max="100" />
         <label htmlFor="location">Location: </label><input id="location" name="location" required pattern="[A-Za-z0-9 ]+" />
         <Button type={"submit"} label={"Submit"} onButtonClick={null}/>
