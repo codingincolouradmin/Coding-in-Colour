@@ -13,7 +13,7 @@ export const fetchData = async () => {
 
 export const sendData = async (title) => {
   try {
-    const response = await axios.put(`${url}/1`, {
+    const response = await axios.post(url, {
       id: Date.now(),
       title: title,
       authorId: null,
@@ -35,7 +35,7 @@ export const deleteData = async (id) => {
   }
 };
 
-export const updateData = async (bookId, authorId) => {
+export const updateAssignAuthor = async (bookId, authorId) => {
   try {
     const response = await axios.put(`${url}/${bookId}`, {
       authorId: authorId,

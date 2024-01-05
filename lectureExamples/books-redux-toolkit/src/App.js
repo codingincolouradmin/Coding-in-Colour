@@ -5,7 +5,8 @@ import Authors from "./components/Authors";
 import { useSelector, useDispatch } from "react-redux";
 import { selectBooks, assignAuthor } from "./features/booksSlice";
 import { selectAuthors } from "./features/authorsSlice";
-import { updateData } from "./services/bookService";
+import { updateAssignAuthor } from "./services/bookService";
+import { useState } from "react";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function App() {
 
   const handleAssignAuthor = async (bookId, authorId) => {
     try {
-      const updatedItem = await updateData(bookId, authorId);
+      const updatedItem = await updateAssignAuthor(bookId, authorId);
       const bId = updatedItem.id;
       const aId = updatedItem.authorId;
       const payload = { bId, aId };

@@ -54,10 +54,15 @@ function Books() {
         {books.map((book) => (
           <li key={book.id}>
             <p>{book.title}</p>
-            <p>AuthorName: </p>
-            {book.authorId
-              ? authors.find((author) => author.id === book.authorId)?.name
-              : "no author"}
+            <p>
+              AuthorName:
+              <b>
+                {book.authorId
+                  ? " " +
+                    authors.find((author) => author.id === book.authorId)?.name
+                  : " no author"}{" "}
+              </b>
+            </p>
             <button onClick={(e) => handleDelete(book.id)}>delete</button>
           </li>
         ))}
