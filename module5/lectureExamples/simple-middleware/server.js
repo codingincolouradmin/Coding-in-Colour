@@ -6,11 +6,11 @@ const app = express()
 let notes = [
   {
     id: 1,
-    content: "I like mangoes ^^",
+    content: "I like apples ^^",
   },
   {
     id: 2,
-    content: "I think apples are better! :( "
+    content: "I think mangoes are better! :( "
   }
 ]
 
