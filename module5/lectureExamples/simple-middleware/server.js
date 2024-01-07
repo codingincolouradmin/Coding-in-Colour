@@ -23,6 +23,12 @@ const generateId = () => {
   return notes.length + 1 // next id is just current length + 1
 }
 
+// Middleware to log requests
+app.use((req, res, next) => {
+  console.log(`Incoming request: ${req.method} ${req.url}`)
+  next() // Ensures we 'release' the request so it can continue
+})
+
 // Handle GET requests
 app.get('/api/notes', (request, response) => {
   response.json(notes)
@@ -37,6 +43,13 @@ app.post('/api/notes', (request, response) => {
   }
   notes = notes.concat(newNote)
   response.json(newNote)
+})
+
+// Middleware for unknown endpoint
+// Any request that isn't caught by the above two, will 'fall' into this
+app.use((req, res, next) => {
+  console.log('Unknown endpoint')
+  res.send({ message: 'unknown endpoint'})
 })
 
 // Starts our server at PORT 3001
