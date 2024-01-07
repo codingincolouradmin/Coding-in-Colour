@@ -29,6 +29,17 @@ app.get('/api/notes', (request, response) => {
   response.json(notes)
 })
 
+// Handle POST requests
+app.post('/api/notes', (request, response) => {
+  const content = request.body.content
+  const newNote = {
+    id: generateId(),
+    content: content
+  }
+  notes.concat(newNote)
+  response.json(newNote)
+})
+
 const PORT = 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
