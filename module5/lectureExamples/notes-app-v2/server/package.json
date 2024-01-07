@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A basic backend server for notes app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aleem",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
