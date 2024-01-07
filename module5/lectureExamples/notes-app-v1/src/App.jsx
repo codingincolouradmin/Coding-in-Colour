@@ -8,7 +8,7 @@ const App = () => {
     syncNotes()
   }, [])
 
-  // Syncs our notes
+  // Syncs our notes with mockAPI
   const syncNotes = () => {
     noteService
       .getNotes()
