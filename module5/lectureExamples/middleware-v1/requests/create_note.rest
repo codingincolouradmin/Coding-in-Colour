@@ -1,0 +1,19 @@
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "I prefer pineapples"
+}
+
+#####
+
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "We can add multiple notes in one file! Don't forget the ###"
+}
+
+#### 
+
+POST http://localhost:3001/api/notes/unknown

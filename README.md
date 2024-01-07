@@ -61,7 +61,7 @@ Lab time is for working on your assignments and group projects. Your teams will 
 
 ## Curriculum Overview
 
-- ![Curriculum Overview](./images/Course%20Overview.png)
+- ![Curriculum Overview](./Course%20Overview.png)
 
 ## Tools & Technologies:
 
