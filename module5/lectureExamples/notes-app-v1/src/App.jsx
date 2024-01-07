@@ -18,7 +18,14 @@ const App = () => {
   // Handles what happens when we click 'send' -> updates the notes
   const handleClickSend = (e) => {
     e.preventDefault()
-    console.log('hi')
+    const content = e.target['message-input'].value // gets value from input
+    e.target['message-input'].value = ''  // resets input to empty string
+    noteService
+      .sendNote(content)
+      .then((response) => {
+        console.log('added note ', response)
+        syncNotes()
+      })
   }
 
   return (
