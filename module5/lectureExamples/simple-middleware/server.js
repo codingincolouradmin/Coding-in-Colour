@@ -25,7 +25,6 @@ const generateId = () => {
 
 // Handle GET requests
 app.get('/api/notes', (request, response) => {
-  console.log('received request')
   response.json(notes)
 })
 
@@ -36,7 +35,7 @@ app.post('/api/notes', (request, response) => {
     id: generateId(),
     content: content
   }
-  notes.concat(newNote)
+  notes = notes.concat(newNote)
   response.json(newNote)
 })
 
