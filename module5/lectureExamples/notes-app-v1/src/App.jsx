@@ -1,7 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import noteService from './services/notes'
 
 const App = () => {
-  const [notes, setNotes] = useState(['hello', 'mangoes']) // stores our notes
+  const [notes, setNotes] = useState([]) // stores our notes
+
+  useEffect(() => {
+    syncNotes()
+  }, [])
+
+  // Syncs our notes
+  const syncNotes = () => {
+    noteService
+      .getNotes()
+      .then((response) => setNotes(response))
+  }
 
   // Handles what happens when we click 'send' -> updates the notes
   const handleClickSend = (e) => {
@@ -13,7 +25,7 @@ const App = () => {
     <div>
       <h2>notes</h2>
       <ul>
-        {notes.map(note => <li>{note}</li>)}
+        {notes.map(note => <li key={note.id}>{note.content}</li>)}
       </ul>
       <h2>add a note</h2>
       <form onSubmit={handleClickSend}>
