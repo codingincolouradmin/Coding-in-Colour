@@ -25,12 +25,26 @@ const generateId = () => {
 
 // Handle GET requests
 app.get('/api/notes', (request, response) => {
-  console.log('received request')
+  console.log('received GET request')
   response.json(notes)
 })
 
+// Handle GET:id request
+app.get('/api/notes/:id', (request, response) => {
+  const id = Number(request.params.id)
+  let desiredNote = undefined
+  for (let i = 0; i < notes.length; i++) {
+    if (notes[i].id === id) {
+      desiredNote = notes[i]
+    }
+  }
+  response.json(desiredNote)
+})
+
+
 // Handle POST requests
 app.post('/api/notes', (request, response) => {
+  console.log('received POST request')
   const content = request.body.content
   const newNote = {
     id: generateId(),
