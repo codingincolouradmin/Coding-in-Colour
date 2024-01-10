@@ -2,6 +2,11 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 
+/**
+ * TODO
+ * Expanding the notes, so that a note also has an importance field -> Boolean field, true or false
+ * If the note is important or not
+ */
 // Starting server data
 let notes = [
   {
@@ -52,6 +57,12 @@ app.get('/api/notes/:id', (request, response) => {
   }
   response.json(desiredNote)
 })
+
+/**
+ * TODO
+ * Adding a PUT:id endpoint, that updates the importance of a note -> we do this if we want to change importance of a specific note
+ * Note: see how we change the data (notes) to accomodate this!
+ */
 
 /**
  * TODO
