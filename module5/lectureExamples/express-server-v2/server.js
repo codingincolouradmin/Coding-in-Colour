@@ -32,7 +32,7 @@ app.get('/api/notes', (request, response) => {
 // Handle GET:id request
 app.get('/api/notes/:id', (request, response) => {
   const id = Number(request.params.id)
-  let desiredNote = undefined
+  let desiredNote = null;
   for (let i = 0; i < notes.length; i++) {
     if (notes[i].id === id) {
       desiredNote = notes[i]
