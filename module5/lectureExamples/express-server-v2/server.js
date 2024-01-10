@@ -5,11 +5,11 @@ const app = express()
 // Starting server data
 let notes = [
   {
-    id: 1,
+    id: 5632,
     content: "I like mangoes ^^",
   },
   {
-    id: 2,
+    id: 1123,
     content: "I think apples are better! :( "
   }
 ]
@@ -20,7 +20,7 @@ app.use(express.json()) // Allows our server to accept JSON data
 
 // Generates an id for us
 const generateId = () => {
-  return notes.length + 1 // next id is just current length + 1
+  return Number((Math.random() * 10000).toFixed(0))
 }
 
 // Handle GET requests
