@@ -4,6 +4,7 @@
   "description": "Testing purposes for initial database connection",
   "main": "postgres.js",
   "scripts": {
+    "start": "node postgres.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aleem",
