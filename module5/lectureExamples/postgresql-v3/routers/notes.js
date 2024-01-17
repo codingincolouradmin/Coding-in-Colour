@@ -12,5 +12,22 @@ notesRouter.get('/', async (req, res) => {
   res.json(notes)
 })
 
+/**
+ * TODO -> GET:id
+ * @receives request sent to address http://localhost:3001/api/notes/:id
+ * @returns the specific note matching by id
+ */
+
+/**
+ * TODO -> PUT:id (toggles the important field to its opposite)
+ * @receives request sent to address http://localhost:3001/api/notes/:id
+ * @returns the updated note
+ */
+
+/**
+ * TODO -> DELETE:id 
+ * @receives request sent to address http://localhost:3001/api/notes/:id
+ * @returns status code 200
+ */
 
 module.exports = notesRouter
