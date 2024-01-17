@@ -4,7 +4,7 @@ const cors = require('cors')
 const app = express()
 
 // Import our connection
-const { performConnection } = require('./database')
+const { authenticateConnection } = require('./database')
 
 // Import our Routers
 const notesRouter = require('./routers/notes')
@@ -13,8 +13,8 @@ const notesRouter = require('./routers/notes')
 app.use(cors()) // Allows our server to receive data from same localhost -> front-end
 app.use(express.json()) // Allows our server to accept JSON data
 
-// Make connection to our database
-performConnection()
+// authenticate the connection to our database
+authenticateConnection()
 
 app.use(middleware.logger)          // Added middleware to log requests
 app.use('/api/notes', notesRouter)

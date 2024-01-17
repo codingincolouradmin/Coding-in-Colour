@@ -16,7 +16,7 @@ const sequelize = new Sequelize(databaseURL, {
 })
 
 // This authentication authenticates connection, export this
-const performConnection = async () => {
+const authenticateConnection = async () => {
   try {
     await sequelize.authenticate()
     console.log('We have successfully connected to database...')
@@ -25,4 +25,4 @@ const performConnection = async () => {
   }
 }
 
-module.exports = { sequelize, performConnection }
+module.exports = { sequelize, authenticateConnection }
