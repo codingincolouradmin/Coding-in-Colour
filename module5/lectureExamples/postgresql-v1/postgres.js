@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize')
+const { Sequelize, DataTypes } = require('sequelize')
 const pg = require('pg')
 
 // Database URL -> external URL
@@ -26,3 +26,20 @@ const connect = async () => {
 }
 
 connect()
+
+/**
+ * STEP 1: Create a Note toble in our database
+ * First I need to define the data itself with a model that's being stored in the table (Sequelize)
+ */
+const Note = sequelize.define('Note', {
+  content: DataTypes.STRING,
+  important: DataTypes.BOOLEAN
+})
+Note
+  .sync()
+  .then(() => {
+    console.log('Notes table created')
+  })
+  .catch((error) => {
+    console.log('Error creating table: ', error)
+  })
