@@ -1,4 +1,5 @@
 const express = require('express')
+const middleware = require('./utils/middleware')
 const cors = require('cors')
 const app = express()
 
