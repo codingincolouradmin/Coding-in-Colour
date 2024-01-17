@@ -12,6 +12,9 @@ app.use(express.json()) // Allows our server to accept JSON data
 // Make connection to our database
 performConnection()
 
+app.use(middleware.logger)          // Added middleware to log requests
+app.use(middleware.unknownEndpoint) // Added middleware for unknown, notice the order?
+
 // Start our server at PORT 3001
 const PORT = 3001
 app.listen(PORT, () => {
