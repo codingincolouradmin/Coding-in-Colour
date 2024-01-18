@@ -1,4 +1,5 @@
 const express = require('express')
+const notesRouter = require('./routers/notes')
 const middleware = require('./utils/middleware')
 const cors = require('cors')
 const app = express()
@@ -8,7 +9,7 @@ app.use(cors()) // ALlows our server to receive data from same localhost
 app.use(express.json()) // Allows our server to accept JSON data
 
 app.use(middleware.logger) // Added middleware to log requests
-// -> notesRouter
+app.use('/api/notes', notesRouter)
 app.use(middleware.unknownEndpoint) // Added middleware for unknown endpoint
 
 // Start the server at PORT 3001
