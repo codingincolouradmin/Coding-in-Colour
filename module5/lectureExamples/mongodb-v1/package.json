@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "Aleem",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^8.1.0"
+  }
 }
