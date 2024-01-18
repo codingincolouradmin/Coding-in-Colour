@@ -12,9 +12,15 @@ notesRouter.get('/', async (request, response) => {
 })
 
 /**
- * POST request
- * @receives a request sent to the address http://localhost:3001/api/notes, with some data
- * @returns the newly created resource
+ * TODO -> GET:id
+ * @receives request sent to address http://localhost:3001/api/notes/:id
+ * @returns the specific note matching by id
+ */
+
+/**
+ * TODO -> POST (adds a note)
+ * @receives request sent to address http://localhost:3001/api/notes, with data in request body
+ * @returns the new note added
  */
 notesRouter.post('/', async (request, response) => {
   const content = request.body.content
@@ -27,5 +33,17 @@ notesRouter.post('/', async (request, response) => {
   const savedNote = await newNote.save()
   response.status(201).json(savedNote)
 })
+
+/**
+ * TODO -> PUT:id (toggles the important field to its opposite)
+ * @receives request sent to address http://localhost:3001/api/notes/:id
+ * @returns the updated note
+ */
+
+/**
+ * TODO -> DELETE:id 
+ * @receives request sent to address http://localhost:3001/api/notes/:id
+ * @returns status code 200
+ */
 
 module.exports = notesRouter
