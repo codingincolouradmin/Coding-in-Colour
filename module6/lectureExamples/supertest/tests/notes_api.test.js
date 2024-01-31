@@ -68,6 +68,8 @@ describe('POST tests', () => {
     const noteReceived = response.body
 
     // Compare the length of the table -> from 2 to 3 (TODO)
+    const notes = await helper.notesInDb()
+    expect(notes.length).toEqual(3)
     // Check if the note we added is the same as the one we get back
     expect(newNote.content).toEqual(noteReceived.content)
     expect(newNote.important).toEqual(noteReceived.important)
@@ -88,7 +90,11 @@ describe('DELETE tests', () => {
       .expect(201)
 
     // Compare the length of the table -> from 2 to 1 (TODO)
+    const notes = await helper.notesInDb()
+    expect(notes.length).toEqual(1)
     // Check that the note that's left is the one we did not delete
+    const noteLeft = helper.initialNotes[0]
+    expect(noteLeft).toEqual(notes[0])
   })
 })
 

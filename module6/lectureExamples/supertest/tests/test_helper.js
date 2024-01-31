@@ -1,7 +1,6 @@
 /**
  * Provide the path to the test Notes model
  */
-const { JSON } = require('sequelize')
 const Note = require('../models/testNote')
 
 /**
@@ -21,7 +20,7 @@ const initialNotes = [
 // Returns all notes from the testNotes table
 const notesInDb = async () => {
   const testNotes = await Note.findAll()
-  return testNotes
+  return testNotes.map(note => note.get({ plain: true }))
 }
 
 // Clear the testNotes table
