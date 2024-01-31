@@ -20,8 +20,23 @@ const initialNotes = [
 // Returns all notes from the testNotes table
 const notesInDb = async () => {
   const testNotes = await Note.findAll()
-  return testNotes.map(note => note.get({ plain: true }))
+  return testNotes.map(note => note.toJSON())
 }
+
+const alternate = () => {
+  return Note
+    .findAll()
+    .then((response) => {
+      return response.map(note => note.toJSON())
+    })
+}
+
+// const main = async () => {
+//   alternate()
+//     .then((data) => console.log(data))
+// }
+
+// main()
 
 // Clear the testNotes table
 const clearData = async () => {
