@@ -67,10 +67,28 @@ describe('POST tests', () => {
       .expect(201)
     const noteReceived = response.body
 
-    // Compare the length of the database (TODO)
+    // Compare the length of the table -> from 2 to 3 (TODO)
     // Check if the note we added is the same as the one we get back
     expect(newNote.content).toEqual(noteReceived.content)
     expect(newNote.important).toEqual(noteReceived.important)
+  })
+})
+
+describe('DELETE tests', () => {
+  /**
+   * Delete a note, and verify that a note has been deleted
+   */
+  test('DELETE - delete a note', async () => {
+    const deleteNote = helper.initialNotes[1]
+    const id = deleteNote.id
+
+    // Send the delete request
+    await api
+      .delete(`/api/notes/${id}`)
+      .expect(201)
+
+    // Compare the length of the table -> from 2 to 1 (TODO)
+    // Check that the note that's left is the one we did not delete
   })
 })
 
