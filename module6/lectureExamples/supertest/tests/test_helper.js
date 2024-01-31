@@ -1,6 +1,7 @@
 /**
  * Provide the path to the test Notes model
  */
+const { JSON } = require('sequelize')
 const Note = require('../models/testNote')
 
 /**

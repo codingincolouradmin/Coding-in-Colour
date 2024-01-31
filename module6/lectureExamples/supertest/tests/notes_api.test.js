@@ -24,17 +24,17 @@ beforeEach(async () => {
 
 describe('GET tests', () => {
   /**
-   * Check that we have 2 notes at the start
+   * Check that we have 2 notes at the start (GET)
    */
-  test('we have 2 notes at the start', async () => {
+  test('GET - we have 2 notes at the start', async () => {
     const response = await api.get('/api/notes')
     expect(response.body).toHaveLength(2)
   })
 
   /**
-   * Check that we get a specific note
+   * Check that we get a specific note (GET:id)
    */
-  test('getting a specific note', async () => {
+  test('GET:id - getting a specific note', async () => {
     const firstNote = helper.initialNotes[0]
     const id = firstNote.id
 
@@ -46,6 +46,31 @@ describe('GET tests', () => {
 
     // Compare the notes
     expect(firstNote).toEqual(noteReceived)
+  })
+})
+
+describe('POST tests', () => {
+  /**
+   * Add a note, and verify that the note is added
+   */
+  test('POST - adding a note', async () => {
+    // Create our note
+    const newNote = {
+      content: 'Hello',
+      important: true
+    }
+    
+    // Send it to the endpoint and get the note back that we added
+    const response = await api
+      .post('/api/notes')
+      .send(newNote)
+      .expect(201)
+    const noteReceived = response.body
+
+    // Compare the length of the database (TODO)
+    // Check if the note we added is the same as the one we get back
+    expect(newNote.content).toEqual(noteReceived.content)
+    expect(newNote.important).toEqual(noteReceived.important)
   })
 })
 
