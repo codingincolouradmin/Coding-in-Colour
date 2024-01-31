@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "nodemon server.js",
+    "initData": "node config/initData.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
