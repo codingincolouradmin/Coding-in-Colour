@@ -1,0 +1,28 @@
+{
+  "name": "supertest",
+  "version": "1.0.0",
+  "description": "A basic example for the usage of supertest in API testing",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Aleem",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "pg": "^8.11.3",
+    "sequelize": "^6.35.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
