@@ -6,8 +6,10 @@
     "test": "tests"
   },
   "scripts": {
-    "dev": "nodemon server.js",
-    "initData": "node config/initData.js",
+    "devServer": "cross-env NODE_ENV=development nodemon server.js",
+    "testServer": "cross-env NODE_ENV=test nodemon server.js",
+    "initData": "cross-env NODE_ENV=development node config/initData.js",
+    "initTestData": "cross-env NODE_ENV=test node config/initData.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -24,6 +26,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "nodemon": "^3.0.3"
   }
 }

@@ -3,8 +3,9 @@ const notesRouter = express.Router()
 
 /**
  * Import Note model, and with it, connection to the database via sequelize
+ * Accomodate either connecting to the Notes table or the testNotes table
  */
-const Note = require('../models/Note')
+const Note = process.env.NODE_ENV === "test" ? require('../models/testNote') : require('../models/Note')
 // For generating ids
 const { v4: uuidv4 } = require('uuid')
 
