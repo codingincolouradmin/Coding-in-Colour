@@ -1,0 +1,21 @@
+# test GET endpoint
+GET http://localhost:3002/api/notes
+###
+
+# test GET:id endpoint
+GET http://localhost:3002/api/notes/449b7ca5-5ec7-4305-af4c-c607a130dffe
+###
+
+# test POST endpoint
+POST http://localhost:3002/api/notes
+Content-Type: application/json
+
+{
+  "content": "Another note!",
+  "important": "test"
+}
+###
+
+# test DELETE endpoint
+DELETE http://localhost:3002/api/notes/afb5de2e-a7bf-43bc-961f-77ddc255a5d5
+###
