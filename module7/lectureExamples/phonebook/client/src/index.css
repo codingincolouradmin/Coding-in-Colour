@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.list-item p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
