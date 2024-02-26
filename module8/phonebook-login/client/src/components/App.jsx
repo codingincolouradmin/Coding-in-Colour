@@ -12,6 +12,7 @@ import userServices from '../services/user'
  */
 import ContactList from './ContactList'
 import ContactForm from './ContactForm'
+import LoginForm from './LoginForm'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -100,12 +101,18 @@ const App = () => {
   return (
     <div>
       <h1>Phonebook</h1>
-      <h2>favourites</h2>
-      <ContactList contacts={contacts} favouriteOnly={true} onDelete={handleDelete} onUpdate={handleUpdate} />
-      <h2>contacts</h2>
-      <ContactList contacts={contacts} favouriteOnly={false} onDelete={handleDelete} onUpdate={handleUpdate} />
-      <h2>add a contact</h2>
-      <ContactForm onAdd={handleAdd}/>
+      <LoginForm onLogin={handleLogin} onCreate={handleCreate} onLogout={handleLogout} user={user}/>
+      { user
+      ? <>
+          <h2>favourites</h2>
+          <ContactList contacts={contacts} favouriteOnly={true} onDelete={handleDelete} onUpdate={handleUpdate} />
+          <h2>contacts</h2>
+          <ContactList contacts={contacts} favouriteOnly={false} onDelete={handleDelete} onUpdate={handleUpdate} />
+          <h2>add a contact</h2>
+          <ContactForm onAdd={handleAdd}/>
+        </>
+      : null
+      }
     </div>
   )
 }

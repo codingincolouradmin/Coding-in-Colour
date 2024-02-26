@@ -38,6 +38,13 @@ h2 {
   font-size: 1rem;
 }
 
+.username-header {
+  display: flex;
+  flex-direction: row;
+  margin: 0rem 1rem 1rem 1.25rem;
+  gap: 0.5rem;
+}
+
 form {
   margin: 0.5rem 1rem 1rem 1rem;
 }
