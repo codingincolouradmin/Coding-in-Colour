@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
  * Import services
  */
 import phonebookServices from '../services/phonebook'
+import loginServices from '../services/login'
+import userServices from '../services/user'
 
 /**
  * Component imports
@@ -12,6 +14,7 @@ import ContactList from './ContactList'
 import ContactForm from './ContactForm'
 
 const App = () => {
+  const [user, setUser] = useState(null)
   const [contacts, setContacts] = useState([])
 
   console.log(contacts)
@@ -68,6 +71,30 @@ const App = () => {
     phonebookServices
       .updateContact(id)
       .then(() => syncData())
+  }
+
+  /**
+   * Handles login, returns user if correct login, error otherwise
+   * @param {Object} user 
+   */
+  const handleLogin = (user) => {
+
+  }
+
+  /**
+   * Handles logout, sets user to null
+   */
+  const handleLogout = () => {
+    setUser(null)
+  }
+
+  /**
+   * Handles user creation, returns user if correct, error otherwise
+   * (also performs login indirectly)
+   * @param {Object} newUser 
+   */
+  const handleCreate = (newUser) => {
+
   }
 
   return (
