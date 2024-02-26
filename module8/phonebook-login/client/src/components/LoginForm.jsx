@@ -26,7 +26,7 @@ const LoginForm = ({ onLogin, onCreate, onLogout, user }) => {
         </div>
       : <form onSubmit={handleSubmit}>
           <div><input placeholder="username" name="username"/></div>
-          <div><input placeholder="password" name="password"/></div>
+          <div><input placeholder="password" name="password" type="password"/></div>
           <div>
             <button type="submit" value="login">login</button>
             <button type="submit" value="create">create</button>

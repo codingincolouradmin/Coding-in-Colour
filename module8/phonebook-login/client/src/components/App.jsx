@@ -21,8 +21,10 @@ const App = () => {
   console.log(contacts)
 
   useEffect(() => {
-    syncData()
-  }, [])
+    if (user) {
+      syncData()
+    }
+  }, [user])
 
   /**
    * 
@@ -79,7 +81,12 @@ const App = () => {
    * @param {Object} user 
    */
   const handleLogin = (user) => {
-
+    loginServices
+      .loginUser(user)
+      .then((response) => {
+        setUser(response)
+      })
+      .catch((error) => console.log(error))
   }
 
   /**
@@ -95,7 +102,12 @@ const App = () => {
    * @param {Object} newUser 
    */
   const handleCreate = (newUser) => {
-
+    userServices
+      .createUser(newUser)
+      .then((response) => {
+        setUser(response)
+      })
+      .catch((error) => console.log(error))
   }
 
   return (

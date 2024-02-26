@@ -5,7 +5,8 @@
   "scripts": {
     "basicServer": "cross-env NODE_ENV=basic nodemon server.js",
     "basicSetup": "cross-env NODE_ENV=basic node config/init_basic.js",
-    "userServer": "cross-env NODE_ENV=user nodemon server.js"
+    "userServer": "cross-env NODE_ENV=user nodemon server.js",
+    "userSetup": "cross-env NODE_ENV=user node config/init_basic.js"
   },
   "keywords": [],
   "author": "Aleem Tariq",
