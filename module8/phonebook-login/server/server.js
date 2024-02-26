@@ -16,6 +16,7 @@ const app = express()                       // Creates an express server in app
  */
 const morgan = require('morgan')
 const phonebookRouter = require('./routers/phonebook')
+const usersRouter = require('./routers/users')
 
 /**
  * Initial server setup
@@ -30,6 +31,7 @@ app.use(express.json())
  */
 app.use(morgan('dev'))
 app.use('/api/phonebook', phonebookRouter)
+app.use('/api/users', usersRouter)
 
 /**
  * Connect to database, start server & listen to server
