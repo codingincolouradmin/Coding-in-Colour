@@ -1,0 +1,54 @@
+html {
+  background: #f5eccd;
+}
+
+* {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #1a181b;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0rem 1rem 0rem 1rem;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0.5rem 1rem 1rem 1rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.username-header {
+  display: flex;
+  flex-direction: row;
+  margin: 0rem 1rem 1rem 1.25rem;
+  gap: 0.5rem;
+}
+
+form {
+  margin: 0.5rem 1rem 1rem 1rem;
+}
+
+input {
+  padding: 3px;
+}
