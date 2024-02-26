@@ -1,0 +1,31 @@
+{
+  "name": "phonebook-deployment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=dev node server.js",
+    "db": "cross-env NODE_ENV=dev node config/init",
+    "devServer": "cross-env NODE_ENV=dev nodemon server.js",
+    "testServer": "cross-env NODE_ENV=test nodemon server.js",
+    "test": "cross-env NODE_ENV=test jest --verbose -runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.2",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "supertest": "^6.3.4",
+    "uuid": "^9.0.1"
+  }
+}
