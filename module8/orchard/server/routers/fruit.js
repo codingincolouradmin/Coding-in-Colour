@@ -70,5 +70,31 @@ fruitRouter.post('/:id', async (request, response) => {
   return response.status(201).json(savedFruit)
 })
 
+/**
+ * @receives a DELETE request to the URL: http://localhost:3001/api/fruit/:id
+ * Note: The :id required is the id of the FRUIT we want to delete
+ * You should pass the basket id in the request body
+ * @returns an appropriate status code
+ */
+fruitRouter.delete('/:id', async (request, response) => {
+  // Get fields
+  const fruitId = request.params.id
+  const { basketId } = request.body
+  // Check if the basket exists
+  const basket = await Basket.findById(basketId)
+  if (!basket) {
+    return response.status(400).send({
+      error: 'no such basket exists to remove the fruit from'
+    })
+  }
+  // Remove the fruit
+  await Fruit.findByIdAndDelete(fruitId)
+  // Update the basket
+  basket.fruits = basket.fruits.filter(id => id.toJSON() !== fruitId)
+  await basket.save()
+  // Return response
+  response.status(204).send()
+})
+
 
 module.exports = fruitRouter
