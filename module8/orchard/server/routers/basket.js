@@ -35,5 +35,25 @@ basketRouter.get('/:id', async (request, response) => {
   response.json(basket)
 })
 
-
+/**
+ * @receives a POST request to the URL: http://localhost:3001/api/basket
+ * @returns the newly created basket
+ */
+basketRouter.post('/', async (request, response) => {
+  // Get fields
+  const { name } = request.body
+  // Error handling
+  if (!name) {
+    return response.status(400).send({
+      error: 'missing content in body'
+    })
+  }
+  // Create new basket and save it
+  const basket = new Basket({
+    name
+  })
+  const savedBasket = await basket.save()
+  // Return the saved basket
+  response.status(201).send(savedBasket)
+})
 module.exports = basketRouter
