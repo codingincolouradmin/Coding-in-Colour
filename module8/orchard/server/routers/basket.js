@@ -42,7 +42,7 @@ basketRouter.get('/:id', async (request, response) => {
  * Note: The :id required is the id of the PERSON the basket should belong to
  * @returns the newly created basket
  */
-basketRouter.post('/', async (request, response) => {
+basketRouter.post('/:id', async (request, response) => {
   // Get fields
   const personId = request.params.id
   const { name } = request.body
