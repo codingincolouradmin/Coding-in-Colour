@@ -18,6 +18,7 @@ const morgan = require('morgan')
 const fruitRouter = require('./routers/fruit')
 const basketRouter = require('./routers/basket')
 const peopleRouter = require('./routers/people')
+const loginRouter = require('./routers/login')
 
 /**
  * Initial server setup
@@ -31,6 +32,7 @@ app.use(express.json())
  * Adding middleware and routes
  */
 app.use(morgan('dev'))
+app.use('/api/login', loginRouter)
 app.use('/api/people', peopleRouter)
 app.use('/api/baskets', basketRouter)
 app.use('/api/fruit', fruitRouter)
